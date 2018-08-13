@@ -18,6 +18,6 @@ This github contains html template for VIST human evaluation and js script that 
 
 ## Quotation Remarks
 
-(dataset) http://visionandlanguage.net/VIST/dataset.html
-(special thx) sigran
+(dataset) http://visionandlanguage.net/VIST/dataset.html    
+(special thx to) sigran0
 
