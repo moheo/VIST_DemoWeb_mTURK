@@ -1,7 +1,6 @@
 //js for grasping images and changing contents
-/*edit two parts
-1. var submissionjson: it should be formatted the same as example_sub_format_in_a_glance.json
-2. var h2closer_w_h: name of the hidden input need to be changed 
+/*edit the code as follows
+0. var submissionjson: it should be formatted the same as example_sub_format_in_a_glance.json (you can copy your result here to eval yours)
 */
 
 function getRndInteger(min, max) {
