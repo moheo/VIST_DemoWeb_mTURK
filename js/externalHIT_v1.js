@@ -87,7 +87,8 @@ function turkSetAssignmentID( form_name, button_name ) {
 }
 
 
-
+ass ID
+ass ID to amazon server 
 
 
     

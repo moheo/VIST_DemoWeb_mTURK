@@ -1,0 +1,175 @@
+3c3
+<       <title>Rate Visual Story Telling (VIST)</title>
+---
+>       <title>Rating VIST</title>
+10,28c10,19
+<         <!-- jQuery 
+<         <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<         -->
+<         
+<         <!-- server should run at e8e5:/root/storage/sison/data/images/  , $ python -m http.server 6006 -->
+<         <!-- Justified-Gallery -->
+<         <link rel="stylesheet" href="http://147.46.216.59:32926/VIST_Demo_webpage/css/lib/justifiedGallery.min.css">
+<         <script type="text/javascript" src="http://147.46.216.59:32926/VIST_Demo_webpage/js/lib/jquery.justifiedGallery.min.js"></script>
+<         
+<         <script type="text/javascript" src="http://147.46.216.59:32926/VIST_Demo_webpage/js/externalHIT_v1.js"></script>
+< 
+< 
+<         <!--inject js script
+<         -->
+< 
+<         <!-- how to put raw script inside html
+<         <script type="text/javascript"> 
+<              </script>
+<         -->
+---
+>       	<!-- jQuery 
+>     	<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+>     	-->
+>     	
+>     	<!-- Justified-Gallery -->
+>     	<link rel="stylesheet" href="../css/lib/justifiedGallery.min.css" />
+> 		<script type="text/javascript" src="../js/lib/jquery.justifiedGallery.min.js"></script>
+> 		
+> 		
+>       	<script type="text/javascript" src="../js/externalHIT_v1.js"></script>
+97,122c88,91
+<                     <div style="border:black solid 5px;">                    
+<                         <div id="image-container">
+<                             <a href="http://147.46.216.59:32926/1741642.jpg" target="_blank"><img id="img0" image_id="img0" src="http://147.46.216.59:32926/1741642.jpg"></a>
+<                             <a href="http://147.46.216.59:32926/1741640.jpg" target="_blank"><img id="img1" image_id="img1" src="http://147.46.216.59:32926/1741640.jpg"></a>
+<                             <a href="http://147.46.216.59:32926/1741632.jpg" target="_blank"><img id="img2" image_id="img2" src="http://147.46.216.59:32926/1741632.jpg"></a>
+<                             <a href="http://147.46.216.59:32926/1741622.jpg" target="_blank"><img id="img3" image_id="img3" src="http://147.46.216.59:32926/1741622.jpg"></a>
+<                             <a href="http://147.46.216.59:32926/1741587.jpg" target="_blank"><img id="img4" image_id="img4" src="http://147.46.216.59:32926/1741587.jpg"></a>
+< 
+< 
+<                         </div>
+< 
+<                             <h2 style="line-height: 1.3; padding: 0px 15px 0px 15px; margin-top: 5px !important; margin-bottom: 15px !important;">
+<                              [male] could n't wait to get to work to show everyone his costume . [male] went for a pretty predictable magneto so you ca n't really tell from his mask how funny he thinks [male] 's costume is . just in case people did't get it [male] set up a display so he could paint many `` happy little trees . '' he told [female] about how we also considered another 80s reference in [male] e neuman and his `` what me worry '' stance . but [male] was having the most fun when he saw that [female] had styled up her hair so they could hang out as afro twins .
+<                              <input type="hidden" name="team" value="example-submission-file.test"><input type="hidden" name="story_id" value="8220823305-8221897984-8221898312-8221902650-8221902990-">
+<                             </h2>
+<                         <script type="text/javascript" src="http://147.46.216.59:32926/VIST_Demo_webpage/js/renew_html.js"></script>
+< 
+< 
+< <!--original image container 
+< <div id="image-container">
+< <a src0" target="_blank"><img id="image_8220823305" image_id="8220823305" src0"></a>
+< <a src0" target="_blank"><img id="image_8221897984" image_id="8221897984" src0"></a>
+< <a src0" target="_blank"><img id="image_8221898312" image_id="8221898312" src0"></a>
+< <a src0" target="_blank"><img id="image_8221902650" image_id="8221902650" src0"></a>
+< <a src0" target="_blank"><img id="image_8221902990" image_id="8221902990" src0"></a></div><h2 style="line-height: 1.3; padding: 0px 15px 0px 15px; margin-top: 5px !important; margin-bottom: 15px !important;"> [male] could n't wait to get to work to show everyone his costume . [male] went for a pretty predictable magneto so you ca n't really tell from his mask how funny he thinks [male] 's costume is . just in case people did't get it [male] set up a display so he could paint many `` happy little trees . '' he told [female] about how we also considered another 80s reference in [male] e neuman and his `` what me worry '' stance . but [male] was having the most fun when he saw that [female] had styled up her hair so they could hang out as afro twins .<input type="hidden" name="team" value="example-submission-file.test"><input type="hidden" name="story_id" value="8220823305-8221897984-8221898312-8221902650-8221902990-">                     	</h2>
+< -->               			 
+---
+>                		<div style="border:black solid 5px;">
+>                		
+> <div id="image-container"><a href="https://farm1.staticflickr.com/7/9860784_9207fdd023_o.jpg" target="_blank"><img id="image_9860784" image_id="9860784" src="https://farm1.staticflickr.com/7/9860784_9207fdd023_o.jpg"></a><a href="https://farm1.staticflickr.com/7/9860783_d81ef8555c_o.jpg" target="_blank"><img id="image_9860783" image_id="9860783" src="https://farm1.staticflickr.com/7/9860783_d81ef8555c_o.jpg"></a><a href="https://farm1.staticflickr.com/8/9860785_aa0b9be2d4_o.jpg" target="_blank"><img id="image_9860785" image_id="9860785" src="https://farm1.staticflickr.com/8/9860785_aa0b9be2d4_o.jpg"></a><a href="https://farm1.staticflickr.com/5/9686701_158ff0a957_o.jpg" target="_blank"><img id="image_9686701" image_id="9686701" src="https://farm1.staticflickr.com/5/9686701_158ff0a957_o.jpg"></a><a href="https://farm1.staticflickr.com/7/9860786_abf6ed56cb_o.jpg" target="_blank"><img id="image_9860786" image_id="9860786" src="https://farm1.staticflickr.com/7/9860786_abf6ed56cb_o.jpg"></a></div><h2 style="line-height: 1.3; padding: 0px 15px 0px 15px; margin-top: 5px !important; margin-bottom: 15px !important;"> the party had many scary costumes including criminal ones . there were nurses of all kinds and they took many photos and even kissed each other .<input type="hidden" name="team" value="example-submission-file.test"><input type="hidden" name="story_id" value="9860784-9860783-9860785-9686701-9860786-">                     	</h2>
+>                			 
+131,139c100,108
+<             <h4><strong>Rate the Quality of the Story Text ( storyID + 6 Questions. You can <u>scroll down</u> or <u>drag to resize</u> the following box.)</strong></h4>
+<             <!-- in case of showing storyID
+<             <h4><strong>Rate the Quality of the Story Text ( 6 Questions. You can <u>scroll down</u> or <u>drag to resize</u> the following box.)</strong></h4>
+<             -->
+<             		
+<                     <!--
+<                     <div class="form-group"><label for="tag3">(0) StoryID? (Just above the photo stream)</label> <input class="form-control" id="tag3" name="tag3" required="" size="30" type="text" /></div> 
+<                     -->
+<                     
+---
+>             
+>             <h4><strong>Rate the Quality of the Story Text (6 Questions. You can <u>scroll down</u> or <u>drag to resize</u> the following box.)</strong></h4>
+>             
+>             <div class="row" style="height: 250px; overflow: scroll; margin-bottom: 20px; resize: vertical;">
+>             	
+>             	<div class="col-xs-12 col-sm-12 ">
+>             	
+>             		
+>             		
+142c111
+<                     		<h4><strong><label class="group-label" style="color:blue;">(0) StoryID? (put numbers only, nothing else)</label></strong></h4>
+---
+>                     		<h4><strong><label class="group-label" style="color:blue;">(1) This story is focused.</label></strong></h4>
+144,145c113,132
+<                             <div class="form-group"><label for="storyid">5 digit number</label> <input class="form-control" id="storyid" name="storyid" required="" size="30" type="text" /></div>
+< 
+---
+>                      	
+>                      		<table style="width: 100%; align:center; text-align:center;">
+>                      	
+>                      			<tr>
+>                      				<td style="padding: 5px 5px 5px 5px;" ><input autocomplete="off" id="focused-1" name="focused" required="" type="radio" value="1"></td>
+>                      				<td style="padding: 5px 5px 5px 5px;"><input autocomplete="off" id="focused-2" name="focused" required="" type="radio" value="2"></td>
+>                      				<td style="padding: 5px 5px 5px 5px;"><input autocomplete="off" id="focused-3" name="focused" required="" type="radio" value="3"></td>
+>                      				<td style="padding: 5px 5px 5px 5px;"><input autocomplete="off" id="focused-4" name="focused" required="" type="radio" value="4"></td>
+>                      				<td style="padding: 5px 5px 5px 5px;"><input autocomplete="off" id="focused-5" name="focused" required="" type="radio" value="5"></td>
+>                      		
+>                      			</tr>
+>                      	
+>                      			<tr>
+>                      				<td style="padding: 5px 5px 5px 5px;"><label for="focused-1" style="cursor: pointer;"><strong>Strongly<br>Disagree</strong></label></td>
+>                      				<td style="padding: 5px 5px 5px 5px;"><label for="focused-2" style="cursor: pointer;"><strong>Disagree</strong></label></td>
+>                      				<td style="padding: 5px 5px 5px 5px;"><label for="focused-3" style="cursor: pointer;"><strong>Neither Agree<br>Nor Disagree</strong></label></td>
+>                      				<td style="padding: 5px 5px 5px 5px;" ><label for="focused-4" style="cursor: pointer;"><strong>Agree</strong></label></td>
+>                      				<td style="padding: 5px 5px 5px 5px;"><label for="focused-5" style="cursor: pointer;"><strong>Strongly<br>Agree</strong></label></td>
+>                      			</tr>
+>                      		</table>	
+148,187c135,136
+<                     <div class="col-xs-12 col-sm-7">
+<                             
+<                             <div class="panel-body bg-info" style="margin: 10px 10px 10px 10px;">
+<                                 <p>
+<                                     <h4><strong>5-digit red number shown at the end of the story (e.g. 45530)</br></strong></h4>
+<                                     Story ID: value between 45530 ~ 50583 including both ends 
+<                             
+<                                 </p>
+<                                 
+<                             </div>
+<                         </div>
+<                     </div>
+<                     <div class="form-group row" style="border: 1px solid black; padding: 0px 10px 0px 10px;">
+<                         <div class="col-xs-12 col-sm-5">
+<                             <h4><strong><label class="group-label" style="color:blue;">(1) This story is focused.</label></strong></h4>
+<                         
+<                         
+<                             <table style="width: 100%; align:center; text-align:center;">
+<                         
+<                                 <tr>
+<                                     <td style="padding: 5px 5px 5px 5px;" ><input autocomplete="off" id="focused-1" name="focused" required="" type="radio" value="1"></td>
+<                                     <td style="padding: 5px 5px 5px 5px;"><input autocomplete="off" id="focused-2" name="focused" required="" type="radio" value="2"></td>
+<                                     <td style="padding: 5px 5px 5px 5px;"><input autocomplete="off" id="focused-3" name="focused" required="" type="radio" value="3"></td>
+<                                     <td style="padding: 5px 5px 5px 5px;"><input autocomplete="off" id="focused-4" name="focused" required="" type="radio" value="4"></td>
+<                                     <td style="padding: 5px 5px 5px 5px;"><input autocomplete="off" id="focused-5" name="focused" required="" type="radio" value="5"></td>
+<                             
+<                                 </tr>
+<                         
+<                                 <tr>
+<                                     <td style="padding: 5px 5px 5px 5px;"><label for="focused-1" style="cursor: pointer;"><strong>Strongly<br>Disagree</strong></label></td>
+<                                     <td style="padding: 5px 5px 5px 5px;"><label for="focused-2" style="cursor: pointer;"><strong>Disagree</strong></label></td>
+<                                     <td style="padding: 5px 5px 5px 5px;"><label for="focused-3" style="cursor: pointer;"><strong>Neither Agree<br>Nor Disagree</strong></label></td>
+<                                     <td style="padding: 5px 5px 5px 5px;" ><label for="focused-4" style="cursor: pointer;"><strong>Agree</strong></label></td>
+<                                     <td style="padding: 5px 5px 5px 5px;"><label for="focused-5" style="cursor: pointer;"><strong>Strongly<br>Agree</strong></label></td>
+<                                 </tr>
+<                             </table>    
+<                         </div>                                        
+< 
+< 
+<                     <div class="col-xs-12 col-sm-7">
+---
+>                     
+>                     	<div class="col-xs-12 col-sm-7">
+190,191c139,140
+<                     			<h4><strong><p>
+<                     				Each story should have a focus,</br></strong></h4> i.e., each sentence of the story should contain information that is "naturally" relevant to the rest of the story, nothing should be random or irrelevant.
+---
+>                     			<p>
+>                     				Each story should have a focus, i.e., each sentence of the story should contain information that is "naturally" relevant to the rest of the story, nothing should be random or irrelevant.
+201c150,152
+<                     <div class="form-group row" style="border: 1px solid black; padding: 0px 10px 0px 10px;">
+---
+>                      <div class="form-group row" style="border: 1px solid black; padding: 0px 10px 0px 10px;">
+>                      
+>                      	
+232c183
+<                     			<p><h4><strong>The story should be well-structured, grammatical and well-organized.</br></strong></h4> The story shouldn't be a bunch of related information, but should build from sentence to sentence into a coherent body of readable text describing the set of images.</p>
+---
+>                     			<p>The story should be well-structured, grammatical and well-organized. The story shouldn't be a bunch of related information, but should build from sentence to sentence into a coherent body of readable text describing the set of images.</p>
