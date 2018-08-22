@@ -1,0 +1,11 @@
+Cuda is enabled...
+Step [0/79], Loss: 2.7886, Perplexity: 16.2589
+Step [10/79], Loss: 2.7225, Perplexity: 15.2178
+Step [20/79], Loss: 2.7815, Perplexity: 16.1438
+Step [30/79], Loss: 2.7858, Perplexity: 16.2125
+Step [40/79], Loss: 2.8564, Perplexity: 17.3992
+Step [50/79], Loss: 3.0020, Perplexity: 20.1249
+Step [60/79], Loss: 2.8075, Perplexity: 16.5683
+Step [70/79], Loss: 2.8284, Perplexity: 16.9182
+Average Loss: 2.8756, Average Perplexity: 17.7367
+Total story size : 2019

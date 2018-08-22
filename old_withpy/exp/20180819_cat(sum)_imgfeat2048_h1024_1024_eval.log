@@ -1,0 +1,20 @@
+Cuda is enabled...
+Step [0/79], Loss: 2.7924, Perplexity: 16.3194
+Step [10/79], Loss: 2.7287, Perplexity: 15.3126
+Step [20/79], Loss: 2.7862, Perplexity: 16.2193
+Step [30/79], Loss: 2.7807, Perplexity: 16.1299
+Step [40/79], Loss: 2.8525, Perplexity: 17.3306
+Step [50/79], Loss: 2.9940, Perplexity: 19.9644
+Step [60/79], Loss: 2.8162, Perplexity: 16.7139
+Step [70/79], Loss: 2.8379, Perplexity: 17.0805
+[Passed] Test file is in valid JSON syntax.
+[Passed] Each photo sequence has only one story.
+[Passed] All required stories are submitted.
+MeteorConfiguration...
+setTask...
+scorer created...
+--------------------------
+Avg. Max Meteor Score =
+0.29549508881996456
+Average Loss: 2.8762, Average Perplexity: 17.7470
+Total story size : 2019
