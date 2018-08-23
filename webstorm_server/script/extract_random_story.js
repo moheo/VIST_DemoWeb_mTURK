@@ -18,7 +18,9 @@ exports.get_random_item = () => {
     let photos = s2p[index];
 
     photos = photos.map((p_id) => {
-        return 'http://147.46.216.59:32926/' + p_id + '.jpg';
+        //147.46.216.59 --> local directory: load fails why?
+        //return p_id + '.jpg' 
+        return '../public/images/test/' + p_id + '.jpg';
     });
     let story = s2t[index];
 

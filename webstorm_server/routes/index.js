@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 let Ans = require('../models/answer')
 let ers = require('../script/extract_random_story');
+let rand = require('random-key');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let random_item = ers.get_random_item();
-
   res.render('index', {
       photo_0: random_item[0][0],
       photo_1: random_item[0][1],
@@ -47,18 +47,29 @@ router.post('/', function(req, res){
 
   answer_data.save()
     .then(()=>{
-      res.json({
+      res.render('afterpost', {title: "success", 
+                               msg: "Submission Success! Copy and paste the submission key below", 
+                               submission_key: rand.generate(10)
+                             }
+                );
+      /*res.json({
         status: 200,
         message: 'success',
         data: true,
-      });
+        submission_key: rand.generate(10),
+      });*/
     })
     .catch((err)=>{
-      res.status(500).json({
+      res.render('afterpost', {title: "fail", 
+                               msg: "Submission Fail: Please let requester know about this", 
+                               submission_key: "Seonil_Son, sison@bi.snu.ac.kr"
+                             }
+                );
+      /*res.status(500).json({
         status: 500,
         message: err,
         data: false,
-      });
+      });*/
     });
 
 });
