@@ -29,7 +29,6 @@ app.use('/users', usersRouter);
 app.use('/form_received', formRouter);
 
 
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -55,7 +54,7 @@ db.once('open', () => {
   console.log('Connected to mongod server');
 });
 
-mongoose.connect('mongodb://localhost/lyricdb');
+mongoose.connect('mongodb://localhost/qna');
 
 //https://mongoosejs.com/docs/
 //it is a codeblock for connecting to a db server thus running another server for mongodb is required
