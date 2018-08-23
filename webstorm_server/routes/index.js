@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 let Ans = require('../models/answer')
-
 let ers = require('../script/extract_random_story');
 
 /* GET home page. */
