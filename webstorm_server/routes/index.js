@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+let Ans = require('../models/answer')
 
 let ers = require('../script/extract_random_story');
 
@@ -19,8 +20,52 @@ router.get('/', function(req, res, next) {
   );
 });
 
+
+
 router.post('/', function(req, res){
-  console.log(req.body);
-})
+  let assignmentId = req.body.assignmentId;
+  let workerID = req.body.workerID;
+  let story_id = req.body.story_id;
+  let focused = req.body.focused;
+  let coherent = req.body.coherent;
+  let share = req.body.share;
+  let human = req.body.human;
+  let grounded = req.body.grounded;
+  let detailed = req.body.detailed;
+
+  // Ans constructor is defined at models/answer.js and exported by the last line with mongoose.model('Ans', answerSchema)
+  let answer_data = new Ans({
+      assignmentId: assignmentId,
+      workerID: workerID,  
+      story_id: story_id,
+      focused: focused,
+      coherent: coherent,
+      share: share,
+      human: human,
+      grounded: grounded,
+      detailed: detailed,
+  })
+
+  answer_data.save()
+    .then(()=>{
+      res.json({
+        status: 200,
+        message: 'success',
+        data: true,
+      });
+    })
+    .catch((err)=>{
+      res.status(500).json({
+        status: 500,
+        message: err,
+        data: false,
+      });
+    });
+
+});
 
 module.exports = router;
+
+//check at the shell
+//mongo
+//> show databases
