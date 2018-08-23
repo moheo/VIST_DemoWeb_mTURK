@@ -1,34 +1,51 @@
-var express = require('express');
+let https = require('https'), 
+    express = require('express');
+let app = express(),
+    fs = require('fs');
+    port = 4170;
+app.use(express.urlencoded({extended: true}));
+app.use(express.json())
+//app.use(express.json());
 
-var app = express();
+/*
+var options = {
+    key: fs.readFileSync('private.pem'),
+    cert: fs.readFileSync('public.pem'),
+};
+*/
 
+//app.get routing
 app.get('/', function(req, res){
-res.send('Hello homepage');
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('<h3>https server welcome</h3>');
+    res.write('<p>'+req+'</p>')
+    res.end();
 });
 
 app.get('/login', function(req,res){
-res.send('Login');
+    res.send('Login');
 });
 
 app.get('/form_received', function(req, res){
     res.send('form_received ')
 });
 
-app.listen(4170, function(){
+//app.post form
+app.post('/', function(req, res){
+    res.send(req);
+});
 
-console.log('Connected 4170 prot!');
 
-
-// receive the form . // doesnt work here
+// receive the form .
+/*
 app.post('/', function(req,res){
-    var title = req.body.title;
-    var desc = req.body.description;
+    var title = req.body.div;
     res.send(title+','+description);
 })
+*/
 
 
 
-});
 
 
 //express_tutorial at localhost:4170 port
