@@ -9,6 +9,11 @@ let bodyParser = require('body-parser')
 let app = express();
 
 let indexRouter = require('./routes/index');
+/*
+let pubScriptRouter = require('./routes/pubscript'); // script(routes/pubscript.js) for routing public/javascripts
+let pubScriptRouter = require('./routes/pubstyle'); //
+let pubImgRouter = require('./routes/pubimgs'); // 
+*/
 //let usersRouter = require('./routes/users');
 //let formRouter = require('./routes/form_received');
 
@@ -16,7 +21,17 @@ let indexRouter = require('./routes/index');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+/*app.set('views', path.join(__dirname, ()=>{
+    console.log(__dirname);
+    return 'views'
+}));*/
+
 app.set('view engine', 'pug');
+/* dunno what exactly app.set() does. It is defaulting sth
+app.set('public/images/test', path.join(__dirname, 'public/images/test'));
+app.set('public/javascripts', path.join(__dirname, 'public/javascripts'));
+app.set('public/stylesheets', path.join(__dirname, 'public/stylesheets'));
+*/
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -24,10 +39,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-//app.use('/users', usersRouter);
-//app.use('/form_received', formRouter);
+/*app.use(express.static(path.join(__dirname, () =>{
+    console.log(__dirname);
+    return 'public'
+})));*/
 
+app.use('/', indexRouter);
+//app.use('/public/script', publicRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,6 +76,5 @@ mongoose.connect('mongodb://localhost/answers');
 
 //https://mongoosejs.com/docs/
 //it is a codeblock for connecting to a db server thus running another server for mongodb is required
-
 
 module.exports = app;

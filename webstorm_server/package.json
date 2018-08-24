@@ -13,7 +13,8 @@
     "http-errors": "~1.6.2",
     "mongoose": "^5.2.9",
     "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "random-key": "^0.3.2"
   },
   "devDependencies": {
     "ws": "3.3.2"

@@ -5,10 +5,11 @@ let ers = require('../script/extract_random_story');
 let rand = require('random-key');
 
 /* GET home page. */
+//router.get('/', function(req, res, next) {
 router.get('/', function(req, res, next) {
   let random_item = ers.get_random_item();
   res.render('index', {
-      photo_0: random_item[0][0],
+      photo_0: random_item[0][0], //this tries to GET from https://localhost:3000/public/images/test/-----.jpg
       photo_1: random_item[0][1],
       photo_2: random_item[0][2],
       photo_3: random_item[0][3],
