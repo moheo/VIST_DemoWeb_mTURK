@@ -1,5 +1,8 @@
+pwpass
+**/pwpass
 **/__pycache__/
 **/.ipynb_checkpoints/
 **/webstorm_server/public/images/test/
 **/webstorm_server/public/images/**
 **/old_withpy/exp/
+**/webstorm_server/public/test_resized.tar.gz
