@@ -2,7 +2,7 @@ extends layout
 
 block content
   //form#mturk_form(style='margin-top: 20px;', name='mturk_form', method='post', action='https://www.mturk.com/mturk/externalSubmit')
-  form#mturk_form(style='margin-top: 20px;', name='mturk_form', method='post', action='http://localhost:3000')
+  form#mturk_form(style='margin-top: 20px;', name='mturk_form', method='post', action='http://147.46.216.59:32925')
     input#assignmentId(type='hidden', value='', name='assignmentId')
     // HIT template: ImageTagging-v3.0
     // Bootstrap v3.0.3
@@ -22,9 +22,9 @@ block content
               strong Instructions
             .panel-body
               p
-                | In this HIT, we will show you a
+                | In this HIT, we will show you a 
                 u visual story
-                | , which includes:
+                | , which includes: 
               ol
                 li
                   strong
@@ -58,15 +58,15 @@ block content
             strong The Story and the Photo Sequence It Describes
           ul
             li
-              | It will take some time to load all 5 images, please start rating
+              | It will take some time to load all 5 images, please start rating 
               u only after all 5 images have been loaded
               | .
             li
-              | The photos are ordered, from left to right, based on
+              | The photos are ordered, from left to right, based on 
               u when this photo appeared in the story
               | .
             li
-              | You can
+              | You can 
               u click
               |  on each photo to see the original image.
           h3(style='padding: 20px 20px 20px 20px; background: yellow; ')
@@ -466,5 +466,5 @@ block content
     p.text-center
       input#submitButton.btn.btn-primary(type='submit', value='Submit')
     div(style='height: 200px;')
-  //script(language='Javascript').
-      //turkSetAssignmentID();
+  script(language='Javascript').
+      turkSetAssignmentID();

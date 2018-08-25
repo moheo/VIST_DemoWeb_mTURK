@@ -18,5 +18,23 @@
   },
   "devDependencies": {
     "ws": "3.3.2"
-  }
+  },
+  "description": "test at home",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonsus/VIST_DemoWeb_mTURK.git"
+  },
+  "keywords": [
+    "mTURK",
+    "VIST",
+    "Human",
+    "Eval"
+  ],
+  "author": "Web server by Seonil Son, Sungwoo Jung | Contents by Kenneth Huang",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sonsus/VIST_DemoWeb_mTURK/issues"
+  },
+  "homepage": "https://github.com/sonsus/VIST_DemoWeb_mTURK#readme"
 }
