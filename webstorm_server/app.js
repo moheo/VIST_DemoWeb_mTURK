@@ -8,6 +8,8 @@ let bodyParser = require('body-parser')
 
 let app = express();
 
+let port = process.env.PORT || 3000; // $ PORT = ___ 
+
 let indexRouter = require('./routes/index');
 /*
 let pubScriptRouter = require('./routes/pubscript'); // script(routes/pubscript.js) for routing public/javascripts

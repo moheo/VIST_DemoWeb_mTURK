@@ -18,8 +18,8 @@ exports.get_random_item = () => {
     let photos = s2p[index];
 
     photos = photos.map((p_id) => {
-        return 'http://147.46.216.59:32925/images/test/' + p_id + '.jpg'
-        //return 'http://175.195.171.141:32925/images/test/' + p_id + '.jpg'
+        return 'http://147.46.216.59:32948/images/test/' + p_id + '.jpg'
+        //return 'http://175.195.171.141:32948/images/test/' + p_id + '.jpg'
     });
     let story = s2t[index];
 
