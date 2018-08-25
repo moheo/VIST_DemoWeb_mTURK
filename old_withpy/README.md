@@ -2,7 +2,7 @@
 
 ~~This github contains html template for VIST human evaluation and js script that refreshes it.~~
 
-~~## How to run ~~
+~~## How to run~~
 
  ~~1. copy the contents of <code> scratch_template.html </code> and paste it on the design sheet of mTURK~~
  ~~2. run server (in my case, used python simple server <code> $ python -m http.server 6006 </code>~~
