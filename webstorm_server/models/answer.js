@@ -10,6 +10,8 @@ let answerSchema = new Schema({
   workerID: String, //I need to convert team name to workerID 
   story_id: Number,
   submission_key: String,
+  time_spent: Number, 
+  
   focused: Number,
   coherent: Number,
   share: Number,

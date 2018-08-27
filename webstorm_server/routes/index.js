@@ -8,6 +8,7 @@ let rand = require('random-key');
 //router.get('/', function(req, res, next) {
 router.get('/', function(req, res, next) {
   let random_item = ers.get_random_item();
+  let start_time = new Date(); // start time from rendering
   res.render('index', {
       photo_0: random_item[0][0], //this tries to GET from https://localhost:3000/public/images/test/-----.jpg
       photo_1: random_item[0][1],
@@ -23,6 +24,10 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/', function(req, res){
+  let end_time = new Date();
+  
+  let duration_on_survey = end_time - start_time;
+
   let assignmentId = req.body.assignmentId;
   let workerID = req.body.workerID;
   let story_id = req.body.story_id;
@@ -40,6 +45,8 @@ router.post('/', function(req, res){
       workerID: workerID,  
       story_id: story_id,
       submission_key: sub_key,
+      time_spent: duration_on_survey,
+
       focused: focused,
       coherent: coherent,
       share: share,
@@ -64,7 +71,7 @@ router.post('/', function(req, res){
     })
     .catch((err)=>{
       res.render('afterpost', {title: "fail", 
-                               msg: "Submission Fail: Please let requester know about this", 
+                               msg: "Submission Fail: Please let the requester know about this", 
                                submission_key: "Seonil_Son, sison@bi.snu.ac.kr"
                              }
                 );
