@@ -1,0 +1,27 @@
+root@fa24          : prime
+root@1b9e47fac85d: 0  
+root@05c9234112a6: 1
+root@10f6e6a78dcb: 2
+root@699e8db8968c: 3
+root@d5968e7ede23: 4
+root@82c1497f76ec: 5
+root@5c8e7cd9afba: 6
+root@7d2ca8ef0baf: 7
+root@5d809a654bd9: 8
+
+
+
+for each container port 3000 is forwarded to 
+32948
+3000/tcp -> 0.0.0.0:32963
+3000/tcp -> 0.0.0.0:32967
+3000/tcp -> 0.0.0.0:32971
+3000/tcp -> 0.0.0.0:32975
+3000/tcp -> 0.0.0.0:32979
+3000/tcp -> 0.0.0.0:32983
+3000/tcp -> 0.0.0.0:32987
+3000/tcp -> 0.0.0.0:32991
+3000/tcp -> 0.0.0.0:32995
+
+
+
