@@ -32,12 +32,14 @@ router.post('/', function(req, res){
   let human = req.body.human;
   let grounded = req.body.grounded;
   let detailed = req.body.detailed;
+  let sub_key = rand.generate(10);
 
   // Ans constructor is defined at models/answer.js and exported by the last line with mongoose.model('Ans', answerSchema)
   let answer_data = new Ans({
       assignmentId: assignmentId,
       workerID: workerID,  
       story_id: story_id,
+      submission_key: sub_key,
       focused: focused,
       coherent: coherent,
       share: share,
@@ -50,7 +52,7 @@ router.post('/', function(req, res){
     .then(()=>{
       res.render('afterpost', {title: "success", 
                                msg: "Submission Success! Copy and paste the submission key below", 
-                               submission_key: rand.generate(10)
+                               submission_key: sub_key,
                              }
                 );
       /*res.json({
