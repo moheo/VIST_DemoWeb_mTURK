@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res){
   let end_time = new Date();
   
-  let duration_on_survey = end_time - start_time;
+  let duration_on_survey = (end_time - start_time)/1000; // it's in msec unit thus convert it into sec
 
   let assignmentId = req.body.assignmentId;
   let workerID = req.body.workerID;
