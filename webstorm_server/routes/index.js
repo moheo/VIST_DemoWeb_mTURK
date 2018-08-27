@@ -8,7 +8,7 @@ let rand = require('random-key');
 //router.get('/', function(req, res, next) {
 router.get('/', function(req, res, next) {
   let random_item = ers.get_random_item();
-  let start_time = new Date(); // start time from rendering
+  start_time = new Date(); // start time from rendering
   res.render('index', {
       photo_0: random_item[0][0], //this tries to GET from https://localhost:3000/public/images/test/-----.jpg
       photo_1: random_item[0][1],
@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res){
   let end_time = new Date();
   
-  let duration_on_survey = end_time - start_time;
+  let duration_on_survey = (end_time - start_time)/1000; // it's in msec unit thus convert it into sec
 
   let assignmentId = req.body.assignmentId;
   let workerID = req.body.workerID;

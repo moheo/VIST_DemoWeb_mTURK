@@ -74,7 +74,7 @@ db.once('open', () => {
   console.log('Connected to mongod server');
 });
 
-mongoose.connect('mongodb://localhost/answers');
+mongoose.connect('mongodb://localhost/dummyrun0827');
 
 //https://mongoosejs.com/docs/
 //it is a codeblock for connecting to a db server thus running another server for mongodb is required
