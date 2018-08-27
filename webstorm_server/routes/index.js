@@ -8,7 +8,7 @@ let rand = require('random-key');
 //router.get('/', function(req, res, next) {
 router.get('/', function(req, res, next) {
   let random_item = ers.get_random_item();
-  let start_time = new Date(); // start time from rendering
+  let start_time = new Date(); // start time from rendering: global scope
   res.render('index', {
       photo_0: random_item[0][0], //this tries to GET from https://localhost:3000/public/images/test/-----.jpg
       photo_1: random_item[0][1],
