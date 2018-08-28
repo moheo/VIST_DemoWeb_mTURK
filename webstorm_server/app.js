@@ -11,6 +11,7 @@ let app = express();
 let port = process.env.PORT || 3000; // $ PORT = ___ 
 
 let indexRouter = require('./routes/index');
+
 /*
 let pubScriptRouter = require('./routes/pubscript'); // script(routes/pubscript.js) for routing public/javascripts
 let pubScriptRouter = require('./routes/pubstyle'); //
@@ -23,10 +24,12 @@ let pubImgRouter = require('./routes/pubimgs'); //
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-/*app.set('views', path.join(__dirname, ()=>{
+/*
+app.set('views', path.join(__dirname, ()=>{
     console.log(__dirname);
     return 'views'
-}));*/
+}));
+*/
 
 app.set('view engine', 'pug');
 /* dunno what exactly app.set() does. It is defaulting sth
@@ -74,7 +77,22 @@ db.once('open', () => {
   console.log('Connected to mongod server');
 });
 
-mongoose.connect('mongodb://localhost/dummyrun0827');
+mongoose.connect('mongodb://localhost/glacnet_fa24');
+
+/*
+e.g.mongodb://localhost/glacnet_fa24
+container names
+fa24
+1b9e
+05c9
+10f6
+699e
+d596
+82c1
+5c8e
+7d2c
+5d80
+*/
 
 //https://mongoosejs.com/docs/
 //it is a codeblock for connecting to a db server thus running another server for mongodb is required

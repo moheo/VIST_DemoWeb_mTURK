@@ -1,0 +1,44 @@
+!change 4 files
+
+
+
+./app.js: change mongodb collection name to be
+    model_container id to 4th letter
+
+/script/extract_random_story.js
+/views/layout.pug
+/views/index.pug
+    change URL  @ get_random_item()
+                @ scripts lines
+                @ form action target 
+
+
+/
+
+/*app.js
+e.g.mongodb://localhost/glacnet_fa24
+container names
+fa24
+1b9e
+05c9
+10f6
+699e
+d596
+82c1
+5c8e
+7d2c
+5d80
+*/
+
+/*ers.py
+//http://147.46.216.59:32948
+//http://147.46.216.59:32963
+//http://147.46.216.59:32967
+//http://147.46.216.59:32971
+//http://147.46.216.59:32975
+//http://147.46.216.59:32979
+//http://147.46.216.59:32983
+//http://147.46.216.59:32987
+//http://147.46.216.59:32991
+//http://147.46.216.59:32995
+*/

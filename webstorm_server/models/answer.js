@@ -6,8 +6,8 @@ let Schema = mongoose.Schema;
 mongoose.Promise = global.Promise
 
 let answerSchema = new Schema({
-  assignmentId: String,
-  workerID: String, //I need to convert team name to workerID 
+  //assignmentId: String,
+  //workerID: String, //I need to convert team name to workerID 
   story_id: Number,
   submission_key: String,
   time_spent: Number, 

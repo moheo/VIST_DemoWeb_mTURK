@@ -2,7 +2,8 @@ extends layout
 
 block content
   //form#mturk_form(style='margin-top: 20px;', name='mturk_form', method='post', action='https://www.mturk.com/mturk/externalSubmit')
-  form#mturk_form(style='margin-top: 20px;', name='mturk_form', method='post', action='http://147.46.216.59:32948')
+  form#mturk_form(style='margin-top: 20px;', name='mturk_form', method='post', action='http://localhost:3000/')
+
     input#assignmentId(type='hidden', value='', name='assignmentId')
     // HIT template: ImageTagging-v3.0
     // Bootstrap v3.0.3
@@ -76,7 +77,11 @@ block content
             span(style='color: red;') "names"
             |  of people or organizations with 
             span(style='color: red;') placeholders
-            |  such as [male], [female], or [organization].
+            |  such as [male], [female], [organization], or location (e.g. 
+            u "at location location location." 
+            | could be equivalent to 
+            u "at Walt Disney Park."
+            | )
             br
             br
             | We applied these post-processing on all stories, including stories written by humans and algorithms. 

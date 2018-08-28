@@ -8,9 +8,10 @@ let rand = require('random-key');
 //router.get('/', function(req, res, next) {
 router.get('/', function(req, res, next) {
   let random_item = ers.get_random_item();
-  let start_time = new Date(); // start time from rendering: global scope
+  start_time = new Date(); // start time from rendering: global scope
+  //let start_time
   res.render('index', {
-      photo_0: random_item[0][0], //this tries to GET from https://localhost:3000/public/images/test/-----.jpg
+      photo_0: random_item[0][0], //this tries to GET from URL returned by ers.py
       photo_1: random_item[0][1],
       photo_2: random_item[0][2],
       photo_3: random_item[0][3],
@@ -26,23 +27,22 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res){
   let end_time = new Date();
   
-  let duration_on_survey = (end_time - start_time)/1000; // it's in msec unit thus convert it into sec
-
-  let assignmentId = req.body.assignmentId;
-  let workerID = req.body.workerID;
+  //let assignmentId = req.body.assignmentId;
+  //let workerID = req.body.workerID;
   let story_id = req.body.story_id;
+  let sub_key = rand.generate(10);
+  let duration_on_survey = (end_time - start_time)/1000; // it's in msec unit thus convert it into sec
   let focused = req.body.focused;
   let coherent = req.body.coherent;
   let share = req.body.share;
   let human = req.body.human;
   let grounded = req.body.grounded;
   let detailed = req.body.detailed;
-  let sub_key = rand.generate(10);
 
   // Ans constructor is defined at models/answer.js and exported by the last line with mongoose.model('Ans', answerSchema)
   let answer_data = new Ans({
-      assignmentId: assignmentId,
-      workerID: workerID,  
+      //assignmentId: assignmentId,
+      //workerID: workerID,  
       story_id: story_id,
       submission_key: sub_key,
       time_spent: duration_on_survey,
