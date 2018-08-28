@@ -11,5 +11,6 @@ powered by webstorm template server
 > $npm start    
    
    
-express tutorial.js : listner server for test
-app.js is the server main
+express tutorial.js   
+webstorm_server/app.js is the server main    
+webstorm_server/bin/www wraps app.js --> npm start 
