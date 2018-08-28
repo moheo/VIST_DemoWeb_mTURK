@@ -1,18 +1,19 @@
-root@fa24          : prime
-root@1b9e47fac85d: 0  
-root@05c9234112a6: 1
-root@10f6e6a78dcb: 2
-root@699e8db8968c: 3
-root@d5968e7ede23: 4
-root@82c1497f76ec: 5
-root@5c8e7cd9afba: 6
-root@7d2ca8ef0baf: 7
-root@5d809a654bd9: 8
+root@fa24          0
+root@1b9e47fac85d: 1  
+root@05c9234112a6: 2
+root@10f6e6a78dcb: 3
+root@699e8db8968c: 4
+root@d5968e7ede23: 5
+root@82c1497f76ec: 6
+root@5c8e7cd9afba: 7
+root@7d2ca8ef0baf: 8
+root@5d809a654bd9: 9
 
 
 
 for each container port 3000 is forwarded to 
-32948
+
+3000/tcp -> 32948
 3000/tcp -> 0.0.0.0:32963
 3000/tcp -> 0.0.0.0:32967
 3000/tcp -> 0.0.0.0:32971
@@ -23,5 +24,16 @@ for each container port 3000 is forwarded to
 3000/tcp -> 0.0.0.0:32991
 3000/tcp -> 0.0.0.0:32995
 
+
+http://147.46.216.59:32948
+http://147.46.216.59:32963
+http://147.46.216.59:32967
+http://147.46.216.59:32971
+http://147.46.216.59:32975
+http://147.46.216.59:32979
+http://147.46.216.59:32983
+http://147.46.216.59:32987
+http://147.46.216.59:32991
+http://147.46.216.59:32995
 
 
