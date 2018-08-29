@@ -28,7 +28,7 @@ exports.get_random_item = () => {
     let photos = s2p[index];
 
     photos = photos.map((p_id) => {
-        return 'http://147.46.216.59:32948/images/test/' + p_id + '.jpg'
+        return 'http://147.46.216.59:32959/images/test/' + p_id + '.jpg'
     });
     let story = s2t[index];
 
@@ -38,7 +38,7 @@ exports.get_random_item = () => {
 };
 
 
-//http://147.46.216.59:32948
+//http://147.46.216.59:32959
 //http://147.46.216.59:32963
 //http://147.46.216.59:32967
 //http://147.46.216.59:32971
