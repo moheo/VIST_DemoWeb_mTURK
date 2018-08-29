@@ -9,7 +9,7 @@ docker exec 1b9e cd /notebooks/VIST_DemoWeb_mTURK/webstorm_server
 
 docker exec 05c9 sh -c "cd /notebooks/VIST_DemoWeb_mTURK"
 docker exec 05c9 git pull origin master 
-docker exec 05c9 sh -c "cd /notebooks/VIST_DemoWeb_mTURK/webstorm_server"
+docker exec -it 05c9 sh -c "cd /notebooks/VIST_DemoWeb_mTURK/webstorm_server"
 
 docker exec 10f6 cd /notebooks/VIST_DemoWeb_mTURK
 docker exec 10f6 git pull origin master 
@@ -51,3 +51,7 @@ docker exec 82c1 npm install nodemon
 docker exec 5c8e npm install nodemon
 docker exec 7d2c npm install nodemon
 docker exec 5d80 npm install nodemon
+
+cd webstorm_server 
+npm install nodemon 
+
