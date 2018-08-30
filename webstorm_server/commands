@@ -4,7 +4,7 @@ forever -c "npm start" ./
 ^Z
 bg
 
-mongoexport --db glacnet_1b9e --collection ans --out ./mongodb_jsons/glacnet_spl1_incomplete.json
+mongoexport --db glacnet --collection ans --out ./glacnet_temporal.json
 
 
 forever stopall
