@@ -1,20 +1,19 @@
 extends layout
 
 block content
-  //form#mturk_form(style='margin-top: 20px;', name='mturk_form', method='post', action='https://www.mturk.com/mturk/externalSubmit')
-  form#mturk_form(style='margin-top: 20px;', name='mturk_form', method='post', action='http://147.46.216.59:32963/')
+  form#mturk_form(style='margin-top: 20px;', name='mturk_form', method='post', action='http://147.46.216.59:33007/')
 
     input#assignmentId(type='hidden', value='', name='assignmentId')
     // HIT template: ImageTagging-v3.0
     // Bootstrap v3.0.3
     // Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
-    // The following snippet enables the 'responsive' behavior on smaller screens
+
     
     meta(content='width=device-width,initial-scale=1', name='viewport')
     //meta(http-equiv='Content-Security-Policy', content="default-src 'self'; font-src 'self' data: fonts.gstatic.com;")
 
-    // Instructions
+    // Instructions (DONT BE IN A RUSH!)
     section#TaggingOfAnImage.container
       .row
         .col-xs-12.col-sm-12
@@ -66,10 +65,7 @@ block content
               | The photos are ordered, from left to right, based on 
               u when this photo appeared in the story
               | .
-            li
-              | You can 
-              u click
-              |  on each photo to see the original image.
+
           h3(style='padding: 20px 20px 20px 20px; background: yellow; ')
             | Story text is always displayed in 
             span(style='color: red;') lowercase
@@ -77,38 +73,42 @@ block content
             span(style='color: red;') "names"
             |  of people or organizations with 
             span(style='color: red;') placeholders
-            |  such as [male], [female], [organization], or location (e.g. 
-            u "at location location location." 
+            |  such as [male], [female], [organization], or location. 
+            br
+            |(e.g. 
+            u "[male] is singing at location location location." 
             | could be equivalent to 
-            u "at Walt Disney Park."
+            u "Sam is singing at Walt Disney Park."
             | )
             br
             br
             | We applied these post-processing on all stories, including stories written by humans and algorithms. 
-            span(style='color: red;') Do NOT make your judgement based on these features.
+            span(style='color: red;') DO NOT make your judgement based on these.
             br
             br
             strong
               | Please start rating only after 
               u all 5 images
               |  have been loaded!
+
+      h3
+        strong
+          | Story 1
           div(style='border:black solid 5px;')
             #image-container
-              a(href=photo_0, target='_blank')
-                img#img0(image_id='img0', src=photo_0)
-              a(href=photo_1, target='_blank')
-                img#img1(image_id='img1', src=photo_1)
-              a(href=photo_2, target='_blank')
-                img#img2(image_id='img2', src=photo_2)
-              a(href=photo_3, target='_blank')
-                img#img3(image_id='img3', src=photo_3)
-              a(href=photo_4, target='_blank')
-                img#img4(image_id='img4', src=photo_4)
+              a(href=photo_0_0, target='_blank')
+                img#img0(image_id='img0', src=photo_0_0)
+              a(href=photo_0_1, target='_blank')
+                img#img1(image_id='img1', src=photo_0_1)
+              a(href=photo_0_2, target='_blank')
+                img#img2(image_id='img2', src=photo_0_2)
+              a(href=photo_0_3, target='_blank')
+                img#img3(image_id='img3', src=photo_0_3)
+              a(href=photo_0_4, target='_blank')
+                img#img4(image_id='img4', src=photo_0_4)
             h2(style='line-height: 1.3; padding: 0px 15px 0px 15px; margin-top: 5px !important; margin-bottom: 15px !important;')
-              | #{story}
-              input(type='hidden', name='team', value='example-submission-file.test')
-              input(type='hidden', name='story_id', value=story_id)
-
+              | #{story0}
+              input(type='hidden', name='story_id0', value=story_id0)
       h4
         strong
           | Rate the Quality of the Story Text ( 6 Questions. You can
@@ -123,24 +123,6 @@ block content
         <div class="form-group"><label for="tag3">(0) StoryID? (Just above the photo stream)</label> <input class="form-control" id="tag3" name="tag3" required="" size="30" type="text" /></div>
 
 
-      //.form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
-        .col-xs-12.col-sm-5
-          h4
-            strong
-              label.group-label(style='color:blue;') (0) StoryID? (put numbers only, nothing else)
-          .form-group
-            label(for='storyid') 5 digit number
-            input#storyid.form-control(name='storyid', required='', size='30', type='text')
-        .col-xs-12.col-sm-7
-          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
-            p
-            h4
-              strong
-                | 5-digit red number shown at the end of the story (e.g. 45530)
-                br
-            |                                     Story ID: value between 45530 ~ 50583 including both ends
-            p
-
       .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
         .col-xs-12.col-sm-5
           h4
@@ -150,36 +132,36 @@ block content
             tbody
               tr
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#focused-1(autocomplete='off', name='focused', required='', type='radio', value='1')
+                  input#focused0-1(autocomplete='off', name='focused0', required='', type='radio', value='1')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#focused-2(autocomplete='off', name='focused', required='', type='radio', value='2')
+                  input#focused0-2(autocomplete='off', name='focused0', required='', type='radio', value='2')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#focused-3(autocomplete='off', name='focused', required='', type='radio', value='3')
+                  input#focused0-3(autocomplete='off', name='focused0', required='', type='radio', value='3')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#focused-4(autocomplete='off', name='focused', required='', type='radio', value='4')
+                  input#focused0-4(autocomplete='off', name='focused0', required='', type='radio', value='4')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#focused-5(autocomplete='off', name='focused', required='', type='radio', value='5')
+                  input#focused0-5(autocomplete='off', name='focused0', required='', type='radio', value='5')
               tr
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='focused-1', style='cursor: pointer;')
+                  label(for='focused0-1', style='cursor: pointer;')
                     strong
                       | Strongly
                       br
                       | Disagree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='focused-2', style='cursor: pointer;')
+                  label(for='focused0-2', style='cursor: pointer;')
                     strong Disagree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='focused-3', style='cursor: pointer;')
+                  label(for='focused0-3', style='cursor: pointer;')
                     strong
                       | Neither Agree
                       br
                       | Nor Disagree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='focused-4', style='cursor: pointer;')
+                  label(for='focused0-4', style='cursor: pointer;')
                     strong Agree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='focused-5', style='cursor: pointer;')
+                  label(for='focused0-5', style='cursor: pointer;')
                     strong
                       | Strongly
                       br
@@ -209,36 +191,710 @@ block content
             tbody
               tr
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#coherent-1(autocomplete='off', name='coherent', required='', type='radio', value='1')
+                  input#coherent0-1(autocomplete='off', name='coherent0', required='', type='radio', value='1')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#coherent-2(autocomplete='off', name='coherent', required='', type='radio', value='2')
+                  input#coherent0-2(autocomplete='off', name='coherent0', required='', type='radio', value='2')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#coherent-3(autocomplete='off', name='coherent', required='', type='radio', value='3')
+                  input#coherent0-3(autocomplete='off', name='coherent0', required='', type='radio', value='3')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#coherent-4(autocomplete='off', name='coherent', required='', type='radio', value='4')
+                  input#coherent0-4(autocomplete='off', name='coherent0', required='', type='radio', value='4')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#coherent-5(autocomplete='off', name='coherent', required='', type='radio', value='5')
+                  input#coherent0-5(autocomplete='off', name='coherent0', required='', type='radio', value='5')
               tr
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='coherent-1', style='cursor: pointer;')
+                  label(for='coherent0-1', style='cursor: pointer;')
                     strong
                       | Strongly
                       br
                       | Disagree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='coherent-2', style='cursor: pointer;')
+                  label(for='coherent0-2', style='cursor: pointer;')
                     strong Disagree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='coherent-3', style='cursor: pointer;')
+                  label(for='coherent0-3', style='cursor: pointer;')
                     strong
                       | Neither Agree
                       br
                       | Nor Disagree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='coherent-4', style='cursor: pointer;')
+                  label(for='coherent0-4', style='cursor: pointer;')
                     strong Agree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='coherent-5', style='cursor: pointer;')
+                  label(for='coherent0-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            p
+            h4
+              strong
+                | The story should be well-structured, grammatical and well-organized.
+                br
+            |  The story shouldn't be a bunch of related information, but should build from sentence to sentence into a coherent0 body of readable text describing the set of images.
+            p
+            p
+              strong Good coherence:
+              |  "We went to the park. They had a great play ground. We also got to eat ice cream."
+              br
+              strong Bad coherence
+              | : "We went to the park. We went to the store. We went outside."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;')
+                | (3) If these were my photos, I would like using a story like this to share my experience with my friends.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share0-1(autocomplete='off', name='share0', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share0-2(autocomplete='off', name='share0', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share0-3(autocomplete='off', name='share0', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share0-4(autocomplete='off', name='share0', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share0-5(autocomplete='off', name='share0', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share0-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share0-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share0-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share0-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share0-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;') (4) This story sounds like it was written by a human.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human0-1(autocomplete='off', name='human0', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human0-2(autocomplete='off', name='human0', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human0-3(autocomplete='off', name='human0', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human0-4(autocomplete='off', name='human0', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human0-5(autocomplete='off', name='human0', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human0-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human0-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human0-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human0-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human0-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (5) This story directly reflects concrete entities in the photos.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded0-1(autocomplete='off', name='grounded0', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded0-2(autocomplete='off', name='grounded0', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded0-3(autocomplete='off', name='grounded0', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded0-4(autocomplete='off', name='grounded0', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded0-5(autocomplete='off', name='grounded0', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded0-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded0-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded0-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded0-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded0-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            p
+              strong Good example:
+              |  "A cat, a dog, and a mouse are on a green chair. A lamp is beside the table. Nearby is a window and a door. A person stands in the hallway. They are holding a book."
+            p
+              strong Bad example:
+              |  "This is an image with things and stuff. Afterwards everything happened. There was events and updates. They were here. I was there."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;') (6) This story provides an appropriate level of details.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed0-1(autocomplete='off', name='detailed0', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed0-2(autocomplete='off', name='detailed0', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed0-3(autocomplete='off', name='detailed0', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed0-4(autocomplete='off', name='detailed0', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed0-5(autocomplete='off', name='detailed0', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed0-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed0-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed0-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed0-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed0-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+
+      h3
+        strong
+          | Story 2
+      div(style='border:black solid 5px;')
+        #image-container
+          a(href=photo_1_0, target='_blank')
+            img#img0(image_id='img0', src=photo_1_0)
+          a(href=photo_1_1, target='_blank')
+            img#img1(image_id='img1', src=photo_1_1)
+          a(href=photo_1_2, target='_blank')
+            img#img2(image_id='img2', src=photo_1_2)
+          a(href=photo_1_3, target='_blank')
+            img#img3(image_id='img3', src=photo_1_3)
+          a(href=photo_1_4, target='_blank')
+            img#img4(image_id='img4', src=photo_1_4)
+        h2(style='line-height: 1.3; padding: 0px 15px 0px 15px; margin-top: 5px !important; margin-bottom: 15px !important;')
+          | #{story1}
+          input(type='hidden', name='story_id1', value=story_id1)
+      h4
+        strong
+          | Rate the Quality of the Story Text ( 6 Questions. You can
+          u scroll down
+          |  or
+          u drag to resize
+          |  the following box.)
+      //
+        in case of showing storyID
+        <h4><strong>Rate the Quality of the Story Text ( 6 Questions. You can <u>scroll down</u> or <u>drag to resize</u> the following box.)</strong></h4>
+      //
+        <div class="form-group"><label for="tag3">(0) StoryID? (Just above the photo stream)</label> <input class="form-control" id="tag3" name="tag3" required="" size="30" type="text" /></div>
+
+
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (1) This story is focused.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused1-1(autocomplete='off', name='focused1', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused1-2(autocomplete='off', name='focused1', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused1-3(autocomplete='off', name='focused1', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused1-4(autocomplete='off', name='focused1', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused1-5(autocomplete='off', name='focused1', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused1-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused1-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused1-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused1-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused1-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            h4
+              strong
+              p
+                strong
+                  | Each story should have a focus,
+                  br
+            |  i.e., each sentence of the story should contain information that is "naturally" relevant to the rest of the story, nothing should be random or irrelevant.
+            p
+            p
+              strong Good focus:
+              |  "We went to the park. They had a great play ground. We also got to eat ice cream."
+              br
+              strong Bad focus:
+              |  "We went to the park. I grew up in Chicago. My neighbor is getting surgery. Tom Cruise is such a good actor."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (2) The story is coherent.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent1-1(autocomplete='off', name='coherent1', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent1-2(autocomplete='off', name='coherent1', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent1-3(autocomplete='off', name='coherent1', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent1-4(autocomplete='off', name='coherent1', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent1-5(autocomplete='off', name='coherent1', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent1-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent1-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent1-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent1-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent1-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            p
+            h4
+              strong
+                | The story should be well-structured, grammatical and well-organized.
+                br
+            |  The story shouldn't be a bunch of related information, but should build from sentence to sentence into a coherent1 body of readable text describing the set of images.
+            p
+            p
+              strong Good coherence:
+              |  "We went to the park. They had a great play ground. We also got to eat ice cream."
+              br
+              strong Bad coherence
+              | : "We went to the park. We went to the store. We went outside."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;')
+                | (3) If these were my photos, I would like using a story like this to share my experience with my friends.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share1-1(autocomplete='off', name='share1', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share1-2(autocomplete='off', name='share1', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share1-3(autocomplete='off', name='share1', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share1-4(autocomplete='off', name='share1', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share1-5(autocomplete='off', name='share1', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share1-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share1-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share1-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share1-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share1-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;') (4) This story sounds like it was written by a human.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human1-1(autocomplete='off', name='human1', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human1-2(autocomplete='off', name='human1', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human1-3(autocomplete='off', name='human1', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human1-4(autocomplete='off', name='human1', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human1-5(autocomplete='off', name='human1', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human1-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human1-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human1-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human1-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human1-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (5) This story directly reflects concrete entities in the photos.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded1-1(autocomplete='off', name='grounded1', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded1-2(autocomplete='off', name='grounded1', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded1-3(autocomplete='off', name='grounded1', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded1-4(autocomplete='off', name='grounded1', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded1-5(autocomplete='off', name='grounded1', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded1-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded1-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded1-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded1-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded1-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            p
+              strong Good example:
+              |  "A cat, a dog, and a mouse are on a green chair. A lamp is beside the table. Nearby is a window and a door. A person stands in the hallway. They are holding a book."
+            p
+              strong Bad example:
+              |  "This is an image with things and stuff. Afterwards everything happened. There was events and updates. They were here. I was there."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;') (6) This story provides an appropriate level of details.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed1-1(autocomplete='off', name='detailed1', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed1-2(autocomplete='off', name='detailed1', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed1-3(autocomplete='off', name='detailed1', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed1-4(autocomplete='off', name='detailed1', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed1-5(autocomplete='off', name='detailed1', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed1-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed1-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed1-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed1-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed1-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+
+      h3
+        strong
+          | Story 3
+      div(style='border:black solid 5px;')
+        #image-container
+          a(href=photo_2_0, target='_blank')
+            img#img0(image_id='img0', src=photo_2_0)
+          a(href=photo_2_1, target='_blank')
+            img#img1(image_id='img1', src=photo_2_1)
+          a(href=photo_2_2, target='_blank')
+            img#img2(image_id='img2', src=photo_2_2)
+          a(href=photo_2_3, target='_blank')
+            img#img3(image_id='img3', src=photo_2_3)
+          a(href=photo_2_4, target='_blank')
+            img#img4(image_id='img4', src=photo_2_4)
+        h2(style='line-height: 1.3; padding: 0px 15px 0px 15px; margin-top: 5px !important; margin-bottom: 15px !important;')
+          | #{story2}
+          input(type='hidden', name='story_id2', value=story_id2)
+      h4
+        strong
+          | Rate the Quality of the Story Text ( 6 Questions. You can
+          u scroll down
+          |  or
+          u drag to resize
+          |  the following box.)
+      //
+        in case of showing storyID
+        <h4><strong>Rate the Quality of the Story Text ( 6 Questions. You can <u>scroll down</u> or <u>drag to resize</u> the following box.)</strong></h4>
+      //
+        <div class="form-group"><label for="tag3">(0) StoryID? (Just above the photo stream)</label> <input class="form-control" id="tag3" name="tag3" required="" size="30" type="text" /></div>
+
+
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (1) This story is focused.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused2-1(autocomplete='off', name='focused2', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused2-2(autocomplete='off', name='focused2', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused2-3(autocomplete='off', name='focused2', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused2-4(autocomplete='off', name='focused2', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused2-5(autocomplete='off', name='focused2', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused2-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused2-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused2-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused2-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused2-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            h4
+              strong
+              p
+                strong
+                  | Each story should have a focus,
+                  br
+            |  i.e., each sentence of the story should contain information that is "naturally" relevant to the rest of the story, nothing should be random or irrelevant.
+            p
+            p
+              strong Good focus:
+              |  "We went to the park. They had a great play ground. We also got to eat ice cream."
+              br
+              strong Bad focus:
+              |  "We went to the park. I grew up in Chicago. My neighbor is getting surgery. Tom Cruise is such a good actor."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (2) The story is coherent.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent2-1(autocomplete='off', name='coherent2', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent2-2(autocomplete='off', name='coherent2', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent2-3(autocomplete='off', name='coherent2', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent2-4(autocomplete='off', name='coherent2', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent2-5(autocomplete='off', name='coherent2', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent2-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent2-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent2-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent2-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent2-5', style='cursor: pointer;')
                     strong
                       | Strongly
                       br
@@ -270,36 +926,36 @@ block content
                 tbody
                   tr
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#share-1(autocomplete='off', name='share', required='', type='radio', value='1')
+                      input#share2-1(autocomplete='off', name='share2', required='', type='radio', value='1')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#share-2(autocomplete='off', name='share', required='', type='radio', value='2')
+                      input#share2-2(autocomplete='off', name='share2', required='', type='radio', value='2')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#share-3(autocomplete='off', name='share', required='', type='radio', value='3')
+                      input#share2-3(autocomplete='off', name='share2', required='', type='radio', value='3')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#share-4(autocomplete='off', name='share', required='', type='radio', value='4')
+                      input#share2-4(autocomplete='off', name='share2', required='', type='radio', value='4')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#share-5(autocomplete='off', name='share', required='', type='radio', value='5')
+                      input#share2-5(autocomplete='off', name='share2', required='', type='radio', value='5')
                   tr
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='share-1', style='cursor: pointer;')
+                      label(for='share2-1', style='cursor: pointer;')
                         strong
                           | Strongly
                           br
                           | Disagree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='share-2', style='cursor: pointer;')
+                      label(for='share2-2', style='cursor: pointer;')
                         strong Disagree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='share-3', style='cursor: pointer;')
+                      label(for='share2-3', style='cursor: pointer;')
                         strong
                           | Neither Agree
                           br
                           | Nor Disagree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='share-4', style='cursor: pointer;')
+                      label(for='share2-4', style='cursor: pointer;')
                         strong Agree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='share-5', style='cursor: pointer;')
+                      label(for='share2-5', style='cursor: pointer;')
                         strong
                           | Strongly
                           br
@@ -315,36 +971,36 @@ block content
                 tbody
                   tr
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#human-1(autocomplete='off', name='human', required='', type='radio', value='1')
+                      input#human2-1(autocomplete='off', name='human2', required='', type='radio', value='1')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#human-2(autocomplete='off', name='human', required='', type='radio', value='2')
+                      input#human2-2(autocomplete='off', name='human2', required='', type='radio', value='2')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#human-3(autocomplete='off', name='human', required='', type='radio', value='3')
+                      input#human2-3(autocomplete='off', name='human2', required='', type='radio', value='3')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#human-4(autocomplete='off', name='human', required='', type='radio', value='4')
+                      input#human2-4(autocomplete='off', name='human2', required='', type='radio', value='4')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#human-5(autocomplete='off', name='human', required='', type='radio', value='5')
+                      input#human2-5(autocomplete='off', name='human2', required='', type='radio', value='5')
                   tr
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='human-1', style='cursor: pointer;')
+                      label(for='human2-1', style='cursor: pointer;')
                         strong
                           | Strongly
                           br
                           | Disagree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='human-2', style='cursor: pointer;')
+                      label(for='human2-2', style='cursor: pointer;')
                         strong Disagree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='human-3', style='cursor: pointer;')
+                      label(for='human2-3', style='cursor: pointer;')
                         strong
                           | Neither Agree
                           br
                           | Nor Disagree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='human-4', style='cursor: pointer;')
+                      label(for='human2-4', style='cursor: pointer;')
                         strong Agree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='human-5', style='cursor: pointer;')
+                      label(for='human2-5', style='cursor: pointer;')
                         strong
                           | Strongly
                           br
@@ -358,36 +1014,36 @@ block content
             tbody
               tr
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#grounded-1(autocomplete='off', name='grounded', required='', type='radio', value='1')
+                  input#grounded2-1(autocomplete='off', name='grounded2', required='', type='radio', value='1')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#grounded-2(autocomplete='off', name='grounded', required='', type='radio', value='2')
+                  input#grounded2-2(autocomplete='off', name='grounded2', required='', type='radio', value='2')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#grounded-3(autocomplete='off', name='grounded', required='', type='radio', value='3')
+                  input#grounded2-3(autocomplete='off', name='grounded2', required='', type='radio', value='3')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#grounded-4(autocomplete='off', name='grounded', required='', type='radio', value='4')
+                  input#grounded2-4(autocomplete='off', name='grounded2', required='', type='radio', value='4')
                 td(style='padding: 5px 5px 5px 5px;')
-                  input#grounded-5(autocomplete='off', name='grounded', required='', type='radio', value='5')
+                  input#grounded2-5(autocomplete='off', name='grounded2', required='', type='radio', value='5')
               tr
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='grounded-1', style='cursor: pointer;')
+                  label(for='grounded2-1', style='cursor: pointer;')
                     strong
                       | Strongly
                       br
                       | Disagree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='grounded-2', style='cursor: pointer;')
+                  label(for='grounded2-2', style='cursor: pointer;')
                     strong Disagree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='grounded-3', style='cursor: pointer;')
+                  label(for='grounded2-3', style='cursor: pointer;')
                     strong
                       | Neither Agree
                       br
                       | Nor Disagree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='grounded-4', style='cursor: pointer;')
+                  label(for='grounded2-4', style='cursor: pointer;')
                     strong Agree
                 td(style='padding: 5px 5px 5px 5px;')
-                  label(for='grounded-5', style='cursor: pointer;')
+                  label(for='grounded2-5', style='cursor: pointer;')
                     strong
                       | Strongly
                       br
@@ -411,36 +1067,711 @@ block content
                 tbody
                   tr
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#detailed-1(autocomplete='off', name='detailed', required='', type='radio', value='1')
+                      input#detailed2-1(autocomplete='off', name='detailed2', required='', type='radio', value='1')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#detailed-2(autocomplete='off', name='detailed', required='', type='radio', value='2')
+                      input#detailed2-2(autocomplete='off', name='detailed2', required='', type='radio', value='2')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#detailed-3(autocomplete='off', name='detailed', required='', type='radio', value='3')
+                      input#detailed2-3(autocomplete='off', name='detailed2', required='', type='radio', value='3')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#detailed-4(autocomplete='off', name='detailed', required='', type='radio', value='4')
+                      input#detailed2-4(autocomplete='off', name='detailed2', required='', type='radio', value='4')
                     td(style='padding: 5px 5px 5px 5px;')
-                      input#detailed-5(autocomplete='off', name='detailed', required='', type='radio', value='5')
+                      input#detailed2-5(autocomplete='off', name='detailed2', required='', type='radio', value='5')
                   tr
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='detailed-1', style='cursor: pointer;')
+                      label(for='detailed2-1', style='cursor: pointer;')
                         strong
                           | Strongly
                           br
                           | Disagree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='detailed-2', style='cursor: pointer;')
+                      label(for='detailed2-2', style='cursor: pointer;')
                         strong Disagree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='detailed-3', style='cursor: pointer;')
+                      label(for='detailed2-3', style='cursor: pointer;')
                         strong
                           | Neither Agree
                           br
                           | Nor Disagree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='detailed-4', style='cursor: pointer;')
+                      label(for='detailed2-4', style='cursor: pointer;')
                         strong Agree
                     td(style='padding: 5px 5px 5px 5px;')
-                      label(for='detailed-5', style='cursor: pointer;')
+                      label(for='detailed2-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+
+
+      h3
+        strong
+          | Story 4
+      div(style='border:black solid 5px;')
+        #image-container
+          a(href=photo_3_0, target='_blank')
+            img#img0(image_id='img0', src=photo_3_0)
+          a(href=photo_3_1, target='_blank')
+            img#img1(image_id='img1', src=photo_3_1)
+          a(href=photo_3_2, target='_blank')
+            img#img2(image_id='img2', src=photo_3_2)
+          a(href=photo_3_3, target='_blank')
+            img#img3(image_id='img3', src=photo_3_3)
+          a(href=photo_3_4, target='_blank')
+            img#img4(image_id='img4', src=photo_3_4)
+        h2(style='line-height: 1.3; padding: 0px 15px 0px 15px; margin-top: 5px !important; margin-bottom: 15px !important;')
+          | #{story3}
+          input(type='hidden', name='story_id3', value=story_id3)
+      h4
+        strong
+          | Rate the Quality of the Story Text ( 6 Questions. You can
+          u scroll down
+          |  or
+          u drag to resize
+          |  the following box.)
+      //
+        in case of showing storyID
+        <h4><strong>Rate the Quality of the Story Text ( 6 Questions. You can <u>scroll down</u> or <u>drag to resize</u> the following box.)</strong></h4>
+      //
+        <div class="form-group"><label for="tag3">(0) StoryID? (Just above the photo stream)</label> <input class="form-control" id="tag3" name="tag3" required="" size="30" type="text" /></div>
+
+
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (1) This story is focused.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused3-1(autocomplete='off', name='focused3', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused3-2(autocomplete='off', name='focused3', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused3-3(autocomplete='off', name='focused3', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused3-4(autocomplete='off', name='focused3', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused3-5(autocomplete='off', name='focused3', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused3-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused3-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused3-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused3-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused3-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            h4
+              strong
+              p
+                strong
+                  | Each story should have a focus,
+                  br
+            |  i.e., each sentence of the story should contain information that is "naturally" relevant to the rest of the story, nothing should be random or irrelevant.
+            p
+            p
+              strong Good focus:
+              |  "We went to the park. They had a great play ground. We also got to eat ice cream."
+              br
+              strong Bad focus:
+              |  "We went to the park. I grew up in Chicago. My neighbor is getting surgery. Tom Cruise is such a good actor."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (2) The story is coherent.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent3-1(autocomplete='off', name='coherent3', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent3-2(autocomplete='off', name='coherent3', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent3-3(autocomplete='off', name='coherent3', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent3-4(autocomplete='off', name='coherent3', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent3-5(autocomplete='off', name='coherent3', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent3-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent3-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent3-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent3-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent3-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            p
+            h4
+              strong
+                | The story should be well-structured, grammatical and well-organized.
+                br
+            |  The story shouldn't be a bunch of related information, but should build from sentence to sentence into a coherent3 body of readable text describing the set of images.
+            p
+            p
+              strong Good coherence:
+              |  "We went to the park. They had a great play ground. We also got to eat ice cream."
+              br
+              strong Bad coherence
+              | : "We went to the park. We went to the store. We went outside."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;')
+                | (3) If these were my photos, I would like using a story like this to share my experience with my friends.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share3-1(autocomplete='off', name='share3', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share3-2(autocomplete='off', name='share3', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share3-3(autocomplete='off', name='share3', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share3-4(autocomplete='off', name='share3', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share3-5(autocomplete='off', name='share3', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share3-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share3-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share3-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share3-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share3-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;') (4) This story sounds like it was written by a human.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human3-1(autocomplete='off', name='human3', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human3-2(autocomplete='off', name='human3', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human3-3(autocomplete='off', name='human3', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human3-4(autocomplete='off', name='human3', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human3-5(autocomplete='off', name='human3', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human3-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human3-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human3-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human3-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human3-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (5) This story directly reflects concrete entities in the photos.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded3-1(autocomplete='off', name='grounded3', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded3-2(autocomplete='off', name='grounded3', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded3-3(autocomplete='off', name='grounded3', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded3-4(autocomplete='off', name='grounded3', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded3-5(autocomplete='off', name='grounded3', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded3-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded3-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded3-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded3-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded3-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            p
+              strong Good example:
+              |  "A cat, a dog, and a mouse are on a green chair. A lamp is beside the table. Nearby is a window and a door. A person stands in the hallway. They are holding a book."
+            p
+              strong Bad example:
+              |  "This is an image with things and stuff. Afterwards everything happened. There was events and updates. They were here. I was there."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;') (6) This story provides an appropriate level of details.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed3-1(autocomplete='off', name='detailed3', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed3-2(autocomplete='off', name='detailed3', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed3-3(autocomplete='off', name='detailed3', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed3-4(autocomplete='off', name='detailed3', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed3-5(autocomplete='off', name='detailed3', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed3-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed3-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed3-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed3-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed3-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+
+      h3
+        strong
+          | Story 5
+      div(style='border:black solid 5px;')
+        #image-container
+          a(href=photo_4_0, target='_blank')
+            img#img0(image_id='img0', src=photo_4_0)
+          a(href=photo_4_1, target='_blank')
+            img#img1(image_id='img1', src=photo_4_1)
+          a(href=photo_4_2, target='_blank')
+            img#img2(image_id='img2', src=photo_4_2)
+          a(href=photo_4_3, target='_blank')
+            img#img3(image_id='img3', src=photo_4_3)
+          a(href=photo_4_4, target='_blank')
+            img#img4(image_id='img4', src=photo_4_4)
+        h2(style='line-height: 1.3; padding: 0px 15px 0px 15px; margin-top: 5px !important; margin-bottom: 15px !important;')
+          | #{story4}
+          input(type='hidden', name='story_id4', value=story_id4)
+      h4
+        strong
+          | Rate the Quality of the Story Text ( 6 Questions. You can
+          u scroll down
+          |  or
+          u drag to resize
+          |  the following box.)
+      //
+        in case of showing storyID
+        <h4><strong>Rate the Quality of the Story Text ( 6 Questions. You can <u>scroll down</u> or <u>drag to resize</u> the following box.)</strong></h4>
+      //
+        <div class="form-group"><label for="tag3">(0) StoryID? (Just above the photo stream)</label> <input class="form-control" id="tag3" name="tag3" required="" size="30" type="text" /></div>
+
+
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (1) This story is focused.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused4-1(autocomplete='off', name='focused4', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused4-2(autocomplete='off', name='focused4', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused4-3(autocomplete='off', name='focused4', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused4-4(autocomplete='off', name='focused4', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#focused4-5(autocomplete='off', name='focused4', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused4-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused4-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused4-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused4-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='focused4-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            h4
+              strong
+              p
+                strong
+                  | Each story should have a focus,
+                  br
+            |  i.e., each sentence of the story should contain information that is "naturally" relevant to the rest of the story, nothing should be random or irrelevant.
+            p
+            p
+              strong Good focus:
+              |  "We went to the park. They had a great play ground. We also got to eat ice cream."
+              br
+              strong Bad focus:
+              |  "We went to the park. I grew up in Chicago. My neighbor is getting surgery. Tom Cruise is such a good actor."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (2) The story is coherent.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent4-1(autocomplete='off', name='coherent4', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent4-2(autocomplete='off', name='coherent4', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent4-3(autocomplete='off', name='coherent4', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent4-4(autocomplete='off', name='coherent4', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#coherent4-5(autocomplete='off', name='coherent4', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent4-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent4-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent4-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent4-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='coherent4-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            p
+            h4
+              strong
+                | The story should be well-structured, grammatical and well-organized.
+                br
+            |  The story shouldn't be a bunch of related information, but should build from sentence to sentence into a coherent4 body of readable text describing the set of images.
+            p
+            p
+              strong Good coherence:
+              |  "We went to the park. They had a great play ground. We also got to eat ice cream."
+              br
+              strong Bad coherence
+              | : "We went to the park. We went to the store. We went outside."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;')
+                | (3) If these were my photos, I would like using a story like this to share my experience with my friends.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share4-1(autocomplete='off', name='share4', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share4-2(autocomplete='off', name='share4', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share4-3(autocomplete='off', name='share4', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share4-4(autocomplete='off', name='share4', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#share4-5(autocomplete='off', name='share4', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share4-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share4-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share4-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share4-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='share4-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;') (4) This story sounds like it was written by a human.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human4-1(autocomplete='off', name='human4', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human4-2(autocomplete='off', name='human4', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human4-3(autocomplete='off', name='human4', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human4-4(autocomplete='off', name='human4', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#human4-5(autocomplete='off', name='human4', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human4-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human4-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human4-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human4-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='human4-5', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Agree
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-5
+          h4
+            strong
+              label.group-label(style='color:blue;') (5) This story directly reflects concrete entities in the photos.
+          table(style='width: 100%; align:center; text-align:center;')
+            tbody
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded4-1(autocomplete='off', name='grounded4', required='', type='radio', value='1')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded4-2(autocomplete='off', name='grounded4', required='', type='radio', value='2')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded4-3(autocomplete='off', name='grounded4', required='', type='radio', value='3')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded4-4(autocomplete='off', name='grounded4', required='', type='radio', value='4')
+                td(style='padding: 5px 5px 5px 5px;')
+                  input#grounded4-5(autocomplete='off', name='grounded4', required='', type='radio', value='5')
+              tr
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded4-1', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded4-2', style='cursor: pointer;')
+                    strong Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded4-3', style='cursor: pointer;')
+                    strong
+                      | Neither Agree
+                      br
+                      | Nor Disagree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded4-4', style='cursor: pointer;')
+                    strong Agree
+                td(style='padding: 5px 5px 5px 5px;')
+                  label(for='grounded4-5', style='cursor: pointer;')
+                    strong
+                      | Strongly
+                      br
+                      | Agree
+        .col-xs-12.col-sm-7
+          .panel-body.bg-info(style='margin: 10px 10px 10px 10px;')
+            p
+              strong Good example:
+              |  "A cat, a dog, and a mouse are on a green chair. A lamp is beside the table. Nearby is a window and a door. A person stands in the hallway. They are holding a book."
+            p
+              strong Bad example:
+              |  "This is an image with things and stuff. Afterwards everything happened. There was events and updates. They were here. I was there."
+      .form-group.row(style='border: 1px solid black; padding: 0px 10px 0px 10px;')
+        .col-xs-12.col-sm-12
+          h4
+            strong
+              label.group-label(style='color:blue;') (6) This story provides an appropriate level of details.
+          .row
+            .col-xs-12.col-sm-5
+              table(style='width: 100%; align:center; text-align:center;')
+                tbody
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed4-1(autocomplete='off', name='detailed4', required='', type='radio', value='1')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed4-2(autocomplete='off', name='detailed4', required='', type='radio', value='2')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed4-3(autocomplete='off', name='detailed4', required='', type='radio', value='3')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed4-4(autocomplete='off', name='detailed4', required='', type='radio', value='4')
+                    td(style='padding: 5px 5px 5px 5px;')
+                      input#detailed4-5(autocomplete='off', name='detailed4', required='', type='radio', value='5')
+                  tr
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed4-1', style='cursor: pointer;')
+                        strong
+                          | Strongly
+                          br
+                          | Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed4-2', style='cursor: pointer;')
+                        strong Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed4-3', style='cursor: pointer;')
+                        strong
+                          | Neither Agree
+                          br
+                          | Nor Disagree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed4-4', style='cursor: pointer;')
+                        strong Agree
+                    td(style='padding: 5px 5px 5px 5px;')
+                      label(for='detailed4-5', style='cursor: pointer;')
                         strong
                           | Strongly
                           br
@@ -471,5 +1802,3 @@ block content
     p.text-center
       input#submitButton.btn.btn-primary(type='submit', value='Submit')
     div(style='height: 200px;')
-  //script(language='Javascript').
-      //turkSetAssignmentID();

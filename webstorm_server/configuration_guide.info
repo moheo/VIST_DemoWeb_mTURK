@@ -18,16 +18,14 @@
 
 for URL change use below cmd @ webstorm_server
 
-sed -i 's/147.46.216.59:32959/147.46.216.59:32995/g' views/index.pug
-sed -i 's/147.46.216.59:32959/147.46.216.59:32995/g' views/layout.pug
-sed -i 's/147.46.216.59:32959/147.46.216.59:32995/g' script/extract_random_story.js
+sed -i 's/147.46.216.59:32963/147.46.216.59:33007/g' views/index.pug
+sed -i 's/147.46.216.59:32963/147.46.216.59:33007/g' views/layout.pug
+sed -i 's/147.46.216.59:32963/147.46.216.59:33007/g' script/extract_random_story.js
 cat views/index.pug                 |grep http://147
 cat views/layout.pug                |grep http://147
 cat script/extract_random_story.js  |grep http://147
 
 
-
-/
 
 /*app.js
 e.g.mongodb://localhost/glacnet_fa24
@@ -43,19 +41,4 @@ d596
 7d2c
 5d80
 */
-
-/*ers.py
-//http://147.46.216.59:32959/
-//http://147.46.216.59:32963/
-//http://147.46.216.59:32967/
-//http://147.46.216.59:32971/
-//http://147.46.216.59:32975/
-//http://147.46.216.59:32979/
-//http://147.46.216.59:32983/
-//http://147.46.216.59:32987/
-//http://147.46.216.59:32991/
-//http://147.46.216.59:32995/
-*/
-
-
 

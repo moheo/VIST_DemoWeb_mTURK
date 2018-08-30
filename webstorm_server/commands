@@ -1,19 +1,42 @@
+mongod &
+(5 sec)
 forever -c "npm start" ./ 
+^Z
+bg
+
+mongoexport --db glacnet_1b9e --collection ans --out ./mongodb_jsons/glacnet_spl1_incomplete.json
+
+
 forever stopall
 
+cd webstorm_server
 
-sed -i 's/147.46.216.59:32959/147.46.216.59:32995/g' views/index.pug
-sed -i 's/147.46.216.59:32959/147.46.216.59:32995/g' views/layout.pug
-sed -i 's/147.46.216.59:32959/147.46.216.59:32995/g' script/extract_random_story.js
+sed -i 's/localhost:3000/147.46.216.59:33007/g' views/index.pug
+sed -i 's/localhost:3000/147.46.216.59:33007/g' views/layout.pug
+sed -i 's/localhost:3000/147.46.216.59:33007/g' script/extract_random_story.js
 cat views/index.pug                 |grep http://147
 cat views/layout.pug                |grep http://147
 cat script/extract_random_story.js  |grep http://147
 
+vi script/extract_random_story.js
 
 
+cd VIST_DemoWeb_mTURK
+git stash
+git pull origin master
 
+http://147.46.216.59:33003
+http://147.46.216.59:33007
+http://147.46.216.59:33011
+http://147.46.216.59:33015
+http://147.46.216.59:33019
+http://147.46.216.59:33023
 
+http://147.46.216.59:33027
 
+http://147.46.216.59:33031
+http://147.46.216.59:33035
+http://147.46.216.59:33039
 
 docker restart fa24
 docker restart 1b9e
@@ -37,13 +60,3 @@ docker container port 5c8e |grep 3000
 docker container port 7d2c |grep 3000
 docker container port 5d80 |grep 3000
 
-147.46.216.59:33003
-147.46.216.59:33007
-147.46.216.59:33011
-147.46.216.59:33015
-147.46.216.59:33019
-147.46.216.59:33023
-147.46.216.59:33027
-147.46.216.59:33031
-147.46.216.59:33035
-147.46.216.59:33039
