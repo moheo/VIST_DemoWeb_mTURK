@@ -63,9 +63,14 @@ router.post('/', function(req, res){
   
   //let assignmentId = req.body.assignmentId;
   //let workerID = req.body.workerID;
-  let story_id = req.body.story_id;
   let sub_key = rand.generate(10);
   let duration_on_survey = (end_time - start_time)/1000; // it's in msec unit thus convert it into sec
+  
+  let story_id0 = req.body.story_id0;
+  let story_id1 = req.body.story_id1;
+  let story_id2 = req.body.story_id2;
+  let story_id3 = req.body.story_id3;
+  let story_id4 = req.body.story_id4;
   
   let focused0 = req.body.focused0;
   let coherent0 = req.body.coherent0;
@@ -107,10 +112,15 @@ router.post('/', function(req, res){
   let answer_data = new Ans({
       //assignmentId: assignmentId,
       //workerID: workerID,  
-      story_id: story_id,
       submission_key: sub_key,
       time_spent: duration_on_survey,
 
+      story_id0: story_id0,
+      story_id1: story_id1,
+      story_id2: story_id2,
+      story_id3: story_id3,
+      story_id4: story_id4,
+      
       focused0: focused0,
       coherent0: coherent0,
       share0: share0,
