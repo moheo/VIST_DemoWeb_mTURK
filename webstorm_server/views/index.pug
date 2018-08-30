@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  form#mturk_form(style='margin-top: 20px;', name='mturk_form', method='post', action='http://147.46.216.59:33007/')
+  form#mturk_form(style='margin-top: 20px;', name='mturk_form', method='post', action='http://localhost:3000/')
 
-    input#assignmentId(type='hidden', value='', name='assignmentId')
+    // input#assignmentId(type='hidden', value='', name='assignmentId')
     // HIT template: ImageTagging-v3.0
     // Bootstrap v3.0.3
     // Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries
@@ -13,13 +13,16 @@ block content
     meta(content='width=device-width,initial-scale=1', name='viewport')
     //meta(http-equiv='Content-Security-Policy', content="default-src 'self'; font-src 'self' data: fonts.gstatic.com;")
 
-    // Instructions (DONT BE IN A RUSH!)
+    // Instructions
     section#TaggingOfAnImage.container
       .row
         .col-xs-12.col-sm-12
           .panel.panel-primary
             .panel-heading
-              strong Instructions
+              h4
+                strong 
+                  |Instructions     
+                  span(style='color:yellow;') We expect 3~5 min to complete the survey if you answered with concerns
             .panel-body
               p
                 | In this HIT, we will show you a 
@@ -111,9 +114,9 @@ block content
               input(type='hidden', name='story_id0', value=story_id0)
       h4
         strong
-          | Rate the Quality of the Story Text ( 6 Questions. You can
+          | Rate the Quality of the Story Text ( 6 Questions. You can 
           u scroll down
-          |  or
+          |  or 
           u drag to resize
           |  the following box.)
       //
@@ -448,9 +451,9 @@ block content
           input(type='hidden', name='story_id1', value=story_id1)
       h4
         strong
-          | Rate the Quality of the Story Text ( 6 Questions. You can
+          | Rate the Quality of the Story Text ( 6 Questions. You can 
           u scroll down
-          |  or
+          |  or 
           u drag to resize
           |  the following box.)
       //
@@ -785,9 +788,9 @@ block content
           input(type='hidden', name='story_id2', value=story_id2)
       h4
         strong
-          | Rate the Quality of the Story Text ( 6 Questions. You can
+          | Rate the Quality of the Story Text ( 6 Questions. You can 
           u scroll down
-          |  or
+          |  or 
           u drag to resize
           |  the following box.)
       //
@@ -1123,9 +1126,9 @@ block content
           input(type='hidden', name='story_id3', value=story_id3)
       h4
         strong
-          | Rate the Quality of the Story Text ( 6 Questions. You can
+          | Rate the Quality of the Story Text ( 6 Questions. You can 
           u scroll down
-          |  or
+          |  or 
           u drag to resize
           |  the following box.)
       //
@@ -1460,9 +1463,9 @@ block content
           input(type='hidden', name='story_id4', value=story_id4)
       h4
         strong
-          | Rate the Quality of the Story Text ( 6 Questions. You can
+          | Rate the Quality of the Story Text ( 6 Questions. You can 
           u scroll down
-          |  or
+          |  or 
           u drag to resize
           |  the following box.)
       //

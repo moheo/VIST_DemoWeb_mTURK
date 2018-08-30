@@ -11,6 +11,10 @@ forever stopall
 
 cd webstorm_server
 
+sed -i 's/147.46.216.59:33007/localhost:3000/g' views/index.pug
+sed -i 's/147.46.216.59:33007/localhost:3000/g' views/layout.pug
+sed -i 's/147.46.216.59:33007/localhost:3000/g' script/extract_random_story.js
+
 sed -i 's/localhost:3000/147.46.216.59:33007/g' views/index.pug
 sed -i 's/localhost:3000/147.46.216.59:33007/g' views/layout.pug
 sed -i 's/localhost:3000/147.46.216.59:33007/g' script/extract_random_story.js

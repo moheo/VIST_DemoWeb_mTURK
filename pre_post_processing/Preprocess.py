@@ -59,6 +59,27 @@ params in detail:
 
 '''
 
+class Opt(argparse.ArgumentParser):
+    def __init__(self, 
+                 testsis_input= "/home/seonils/data_storage/VIST_DemoWeb_mTURK/pre_post_processing/test.story-in-sequence.json", 
+                 sid2ps_input="/home/seonils/data_storage/VIST_DemoWeb_mTURK/pre_post_processing/test.storyid2photos_list.json", 
+                 resultdir_input="/home/seonils/data_storage/VIST_DemoWeb_mTURK/webstorm_server/data/", 
+                 htmldir_input="/home/seonils/data_storage/vist200web/www",
+                 modelout_input="modeloutput path ",
+                 numspl_input=5
+                ):
+        self.add_argument('--testsis' , help="path of [test.sis.json] file (VIST dataset)", \
+                            dest=testsis_path, default= "/home/seonils/data_storage/VIST_DemoWeb_mTURK/pre_post_processing/test.story-in-sequence.json")
+        self.add_argument('--sid2photoseq' , help="path of [storyID to photostream json] file (you have to make it your own)", \
+                            dest=sid2ps_path, default= "/home/seonils/data_storage/VIST_DemoWeb_mTURK/pre_post_processing/test.storyid2photos_list.json")
+        self.add_argument('--result_dir', help="preprocessed jsons ready for server use is stored here. If not exists, make it", \
+                            dest=resultdir, default= "/home/seonils/data_storage/VIST_DemoWeb_mTURK/webstorm_server/data/" )
+        self.add_argument('--html_dir', help="dir that \"this\" html files placed in your local, need to be unzipped first (https://github.com/windx0303/VIST-Challenge-NAACL-2018/tree/master/human_eval_interface)", \
+                            dest=htmldir, default= "/home/seonils/data_storage/vist200web/www")
+        self.add_argument('--modelout', help="model inference output need to be the same format as ../old_withpy/example_sub_format_in_a_glance.json", \
+                            dest=modelout_path, default= "/home/seonils/data_storage/vist200web/www")
+        self.add_argument('--numsplit', type=int , help="number of splits you want (splits sid:ps dict with 200 entries into k splits)", dest=numspl, default= 10)
+
 
 class Prep(Opt):
     # calling class method (self.method) inside __init__() is OK.
@@ -240,25 +261,3 @@ class Prep(Opt):
         if not p.is_dir(self.resultdir):
             exit("{dir} doesnt exist".format(directory))
         self.split_normtxt()
-
-
-if __name__=="__main__":
-    option=argparse.ArgumentParser()
-    option.add_argument('--testsis' , help="path of [test.sis.json] file (VIST dataset)", \
-                        dest=testsis_path, default= "/home/seonils/data_storage/VIST_DemoWeb_mTURK/pre_post_processing/test.story-in-sequence.json")
-    option.add_argument('--sid2photoseq' , help="path of [storyID to photostream json] file (you have to make it your own)", \
-                        dest=sid2ps_path, default= "/home/seonils/data_storage/VIST_DemoWeb_mTURK/pre_post_processing/test.storyid2photos_list.json")
-    option.add_argument('--result_dir', help="preprocessed jsons ready for server use is stored here. If not exists, make it", \
-                        dest=resultdir, default= "/home/seonils/data_storage/VIST_DemoWeb_mTURK/webstorm_server/data/" )
-    option.add_argument('--html_dir', help="dir that \"this\" html files placed in your local, need to be unzipped first (https://github.com/windx0303/VIST-Challenge-NAACL-2018/tree/master/human_eval_interface)", \
-                        dest=htmldir, default= "/home/seonils/data_storage/vist200web/www")
-    option.add_argument('--modelout', help="model inference output need to be the same format as ../old_withpy/example_sub_format_in_a_glance.json", \
-                        dest=modelout_path, default= "/home/seonils/data_storage/vist200web/www")
-    option.add_argument('--numsplit', type=int , help="number of splits you want (splits sid:ps dict with 200 entries into k splits)", dest=numspl, default= 10)
-
-    preprocess = Prep(option)
-
-    preprocess.run_prep()
-    #done!
-
-
