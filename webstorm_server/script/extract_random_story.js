@@ -45,15 +45,15 @@ exports.get_random_item = () => {
     let photos4 = s2p[index4];
 
     photos0 = photos0.map((p_id) => {
-        return 'http://localhost:3000/images/test/' + p_id + '.jpg'});
+        return 'http://147.46.216.59:33007/images/test/' + p_id + '.jpg'});
     photos1 = photos1.map((p_id) => {
-        return 'http://localhost:3000/images/test/' + p_id + '.jpg'});
+        return 'http://147.46.216.59:33007/images/test/' + p_id + '.jpg'});
     photos2 = photos2.map((p_id) => {
-        return 'http://localhost:3000/images/test/' + p_id + '.jpg'});
+        return 'http://147.46.216.59:33007/images/test/' + p_id + '.jpg'});
     photos3 = photos3.map((p_id) => {
-        return 'http://localhost:3000/images/test/' + p_id + '.jpg'});
+        return 'http://147.46.216.59:33007/images/test/' + p_id + '.jpg'});
     photos4 = photos4.map((p_id) => {
-        return 'http://localhost:3000/images/test/' + p_id + '.jpg'});
+        return 'http://147.46.216.59:33007/images/test/' + p_id + '.jpg'});
     
     let story0 = s2t_0[index0];
     let story1 = s2t_1[index1];

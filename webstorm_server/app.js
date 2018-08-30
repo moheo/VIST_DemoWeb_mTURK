@@ -77,7 +77,7 @@ db.once('open', () => {
   console.log('Connected to mongod server');
 });
 
-mongoose.connect('mongodb://localhost/glacnet_5to1');
+mongoose.connect('mongodb://localhost/glacnet_5splits_200');
 
 /*
 e.g.mongodb://localhost/glacnet_fa24
