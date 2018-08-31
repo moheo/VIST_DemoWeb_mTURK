@@ -5,7 +5,7 @@
 ./app.js: change mongodb collection name to be
     modelname
 
-./route/index.js
+./script/extract_random_story.js
     change the input json files
 
 ./script/extract_random_story.js
