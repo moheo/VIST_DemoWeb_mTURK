@@ -3,11 +3,11 @@ let fs = require('fs');
 
 let s2p_list = fs.readFileSync('data/200html_sid2photostream.json');
 
-let s2t_list0 = fs.readFileSync('data/glac_ablations/GLAC_no_global/GLAC_no_global_0.json');
-let s2t_list1 = fs.readFileSync('data/glac_ablations/GLAC_no_global/GLAC_no_global_1.json');
-let s2t_list2 = fs.readFileSync('data/glac_ablations/GLAC_no_global/GLAC_no_global_2.json');
-let s2t_list3 = fs.readFileSync('data/glac_ablations/GLAC_no_global/GLAC_no_global_3.json');
-let s2t_list4 = fs.readFileSync('data/glac_ablations/GLAC_no_global/GLAC_no_global_4.json');
+let s2t_list0 = fs.readFileSync('data/glac_ablations/GLAC_no_local/GLAC_no_local_0.json');
+let s2t_list1 = fs.readFileSync('data/glac_ablations/GLAC_no_local/GLAC_no_local_1.json');
+let s2t_list2 = fs.readFileSync('data/glac_ablations/GLAC_no_local/GLAC_no_local_2.json');
+let s2t_list3 = fs.readFileSync('data/glac_ablations/GLAC_no_local/GLAC_no_local_3.json');
+let s2t_list4 = fs.readFileSync('data/glac_ablations/GLAC_no_local/GLAC_no_local_4.json');
 
 
 let s2p = JSON.parse(s2p_list);
