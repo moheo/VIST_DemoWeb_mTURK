@@ -11,9 +11,9 @@ forever stopall
 
 cd webstorm_server
 
-sed -i 's/147.46.216.59:33015/147.46.216.59:33027/g' views/index.pug
-sed -i 's/147.46.216.59:33015/147.46.216.59:33027/g' views/layout.pug
-sed -i 's/147.46.216.59:33015/147.46.216.59:33027/g' script/extract_random_story.js
+sed -i 's/147.46.216.59:33027/147.46.216.59:33023/g' views/index.pug
+sed -i 's/147.46.216.59:33027/147.46.216.59:33023/g' views/layout.pug
+sed -i 's/147.46.216.59:33027/147.46.216.59:33023/g' script/extract_random_story.js
 
 sed -i 's/147.46.216.59:33003/localhost:3000/g' views/index.pug
 sed -i 's/147.46.216.59:33003/localhost:3000/g' views/layout.pug
