@@ -11,9 +11,9 @@ forever stopall
 
 cd webstorm_server
 
-sed -i 's/147.46.216.59:33027/147.46.216.59:33023/g' views/index.pug
-sed -i 's/147.46.216.59:33027/147.46.216.59:33023/g' views/layout.pug
-sed -i 's/147.46.216.59:33027/147.46.216.59:33023/g' script/extract_random_story.js
+sed -i 's/147.46.216.59:33023/localhost:3000/g' views/index.pug
+sed -i 's/147.46.216.59:33023/localhost:3000/g' views/layout.pug
+sed -i 's/147.46.216.59:33023/localhost:3000/g' script/extract_random_story.js
 
 sed -i 's/147.46.216.59:33003/localhost:3000/g' views/index.pug
 sed -i 's/147.46.216.59:33003/localhost:3000/g' views/layout.pug
@@ -33,13 +33,14 @@ cd VIST_DemoWeb_mTURK
 git stash
 git pull origin master
 
-http://147.46.216.59:33003
-http://147.46.216.59:33007
-http://147.46.216.59:33011
-http://147.46.216.59:33015
-http://147.46.216.59:33019
-http://147.46.216.59:33023 crcn5
-http://147.46.216.59:33027 mmtest
+http://147.46.216.59:33003 fa24 GT
+http://147.46.216.59:33007 1b9e glacnet
+http://147.46.216.59:33011 05c9 nocas
+http://147.46.216.59:33015 10f6 noglob
+http://147.46.216.59:33019 699e nolocal
+http://147.46.216.59:33023 d596 crcn5
+http://147.46.216.59:33027 82c1 mmtest
+
 http://147.46.216.59:33031
 http://147.46.216.59:33035
 http://147.46.216.59:33039
@@ -66,3 +67,11 @@ docker container port 5c8e |grep 3000
 docker container port 7d2c |grep 3000
 docker container port 5d80 |grep 3000
 
+mkdir final_jsons
+docker cp fa24:/notebooks/VIST_DemoWeb_mTURK/webstorm_server/tmp.json final_jsons/humanGT.json
+docker cp 1b9e:/notebooks/VIST_DemoWeb_mTURK/webstorm_server/tmp.json final_jsons/glacnet.json
+docker cp 05c9:/notebooks/VIST_DemoWeb_mTURK/webstorm_server/tmp.json final_jsons/glac_nocas.json
+docker cp 10f6:/notebooks/VIST_DemoWeb_mTURK/webstorm_server/tmp.json final_jsons/glac_noglob.json
+docker cp 699e:/notebooks/VIST_DemoWeb_mTURK/webstorm_server/tmp.json final_jsons/glac_nolocal.json
+docker cp d596:/notebooks/VIST_DemoWeb_mTURK/webstorm_server/tmp.json final_jsons/crcn5ep.json
+docker cp 82c1:/notebooks/VIST_DemoWeb_mTURK/webstorm_server/tmp.json final_jsons/srt_mmonly.json

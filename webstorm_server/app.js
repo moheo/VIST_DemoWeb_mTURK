@@ -77,7 +77,7 @@ db.once('open', () => {
   console.log('Connected to mongod server');
 });
 
-mongoose.connect('mongodb://localhost/crcn5ep');
+mongoose.connect('mongodb://localhost/post-test');
 
 /*
 e.g.mongodb://localhost/glacnet_fa24
