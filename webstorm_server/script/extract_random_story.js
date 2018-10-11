@@ -3,11 +3,11 @@ let fs = require('fs');
 
 let s2p_list = fs.readFileSync('data/200html_sid2photostream.json');
 
-let s2t_list0 = fs.readFileSync('data/mmtest_splits/mmtest_spl_0.json');
-let s2t_list1 = fs.readFileSync('data/mmtest_splits/mmtest_spl_1.json');
-let s2t_list2 = fs.readFileSync('data/mmtest_splits/mmtest_spl_2.json');
-let s2t_list3 = fs.readFileSync('data/mmtest_splits/mmtest_spl_3.json');
-let s2t_list4 = fs.readFileSync('data/mmtest_splits/mmtest_spl_4.json');
+let s2t_list0 = fs.readFileSync('data/att0_splits/att0_spl_0.json');
+let s2t_list1 = fs.readFileSync('data/att0_splits/att0_spl_1.json');
+let s2t_list2 = fs.readFileSync('data/att0_splits/att0_spl_2.json');
+let s2t_list3 = fs.readFileSync('data/att0_splits/att0_spl_3.json');
+let s2t_list4 = fs.readFileSync('data/att0_splits/att0_spl_4.json');
 
 
 let s2p = JSON.parse(s2p_list);
@@ -45,28 +45,16 @@ exports.get_random_item = () => {
     let photos4 = s2p[index4];
 
     photos0 = photos0.map((p_id) => {
-<<<<<<< HEAD
-        return 'http://localhost:3000/images/test/' + p_id + '.jpg'});
+        return 'https://azureminos.com:3000/images/test/' + p_id + '.jpg'});
     photos1 = photos1.map((p_id) => {
-        return 'http://localhost:3000/images/test/' + p_id + '.jpg'});
+        return 'https://azureminos.com:3000/images/test/' + p_id + '.jpg'});
     photos2 = photos2.map((p_id) => {
-        return 'http://localhost:3000/images/test/' + p_id + '.jpg'});
+        return 'https://azureminos.com:3000/images/test/' + p_id + '.jpg'});
     photos3 = photos3.map((p_id) => {
-        return 'http://localhost:3000/images/test/' + p_id + '.jpg'});
+        return 'https://azureminos.com:3000/images/test/' + p_id + '.jpg'});
     photos4 = photos4.map((p_id) => {
-        return 'http://localhost:3000/images/test/' + p_id + '.jpg'});
-=======
-        return 'http://147.46.216.59:33027/images/test/' + p_id + '.jpg'});
-    photos1 = photos1.map((p_id) => {
-        return 'http://147.46.216.59:33027/images/test/' + p_id + '.jpg'});
-    photos2 = photos2.map((p_id) => {
-        return 'http://147.46.216.59:33027/images/test/' + p_id + '.jpg'});
-    photos3 = photos3.map((p_id) => {
-        return 'http://147.46.216.59:33027/images/test/' + p_id + '.jpg'});
-    photos4 = photos4.map((p_id) => {
-        return 'http://147.46.216.59:33027/images/test/' + p_id + '.jpg'});
->>>>>>> 9475799a9d454b2f14f4e784b2209a27f4b0ca5d
-    
+        return 'https://azureminos.com:3000/images/test/' + p_id + '.jpg'});
+
     let story0 = s2t_0[index0];
     let story1 = s2t_1[index1];
     let story2 = s2t_2[index2];

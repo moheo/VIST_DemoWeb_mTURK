@@ -15,11 +15,21 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
+/* added by moheo */
+const https = require("https"),
+  fs = require("fs");
+
+const options = {
+  key: fs.readFileSync("/etc/letsencrypt/live/azureminos.com/privkey.pem"),
+  cert: fs.readFileSync("/etc/letsencrypt/live/azureminos.com/fullchain.pem")
+};
+/* adding ended */
+
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = https.createServer(options,app);
 
 /**
  * Listen on provided port, on all network interfaces.

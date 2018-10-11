@@ -12,6 +12,18 @@ let port = process.env.PORT || 3000; // $ PORT = ___
 
 let indexRouter = require('./routes/index');
 
+
+/* added by moheo 
+const https = require("https"),
+  fs = require("fs");
+
+const options = {
+  key: fs.readFileSync("/etc/letsencrypt/live/azureminos.com/privkey.pem"),
+  cert: fs.readFileSync("/etc/letsencrypt/live/azureminos.com/cert.pem")
+};
+*/
+
+
 /*
 let pubScriptRouter = require('./routes/pubscript'); // script(routes/pubscript.js) for routing public/javascripts
 let pubScriptRouter = require('./routes/pubstyle'); //
@@ -77,7 +89,7 @@ db.once('open', () => {
   console.log('Connected to mongod server');
 });
 
-mongoose.connect('mongodb://localhost/mmtest');
+mongoose.connect('mongodb://localhost/testrun');
 
 /*
 e.g.mongodb://localhost/glacnet_fa24
@@ -98,3 +110,5 @@ d596
 //it is a codeblock for connecting to a db server thus running another server for mongodb is required
 
 module.exports = app;
+
+//https.createServer(options, app).listen();

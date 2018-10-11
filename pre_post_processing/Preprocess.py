@@ -261,3 +261,11 @@ class Prep(Opt):
         if not p.is_dir(self.resultdir):
             exit("{dir} doesnt exist".format(directory))
         self.split_normtxt()
+
+if  __name__ == "__main__":
+    
+    opt = Opt()
+    a = Prep(opt)
+    print(opt)
+    print(a)
+    a.run_prep()
